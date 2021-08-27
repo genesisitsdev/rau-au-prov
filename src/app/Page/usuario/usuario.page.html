@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        text=""
+        icon="arrow-back"
+        color="danger"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">INFORME SEUS DADOS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="fGroup" (ngSubmit)="createDadosUsuarios()">
+    <div class="form-conteiner">
+      <div class="item">
+        <ion-input
+          type="text"
+          placeholder="Data de Nascimento"
+          [ngClass]="!fGroup.controls.dtNascimanto.hasError('required') &&
+                 !fGroup.controls.dtNascimanto.hasError('pattern')? 'green' : null "
+          name="dtNascimanto"
+          id="dtNascimanto"
+          [brmasker]="{mask:'00/00/0000', len:10,  type:'num', userCaracters: false}"
+          formControlName="dtNascimanto"
+        ></ion-input>
+      </div>
+      <div class="item">
+        <ion-input
+          type="text"
+          [ngClass]="!fGroup.controls.cpf.hasError('required') &&
+                 !fGroup.controls.cpf.hasError('pattern')? 'green' : null "
+          placeholder="CPF"
+          name="cpf"
+          #cpf
+          [brmasker]="{mask:'000.000.000-00', len:14, type:'num', userCaracters: false}"
+          formControlName="cpf"
+        ></ion-input>
+      </div>
+      <div class="item">
+        <ion-input
+          type="text"
+          [ngClass]="!fGroup.controls.celular.hasError('required') &&
+      !fGroup.controls.celular.hasError('pattern')? 'green' : null "
+          placeholder="Celular"
+          name="celular"
+          #celular
+          [brmasker]="{mask:'(00) 00000-0000', len:15, type:'num', userCaracters: false}"
+          formControlName="celular"
+        ></ion-input>
+      </div>
+      <div class="item">
+        <ion-input
+          type="email"
+          [ngClass]="!fGroup.controls.confimeEmail.hasError('required') &&
+                 !fGroup.controls.confimeEmail.hasError('pattern')? 'green' : null "
+          placeholder="Confirmação de E-mail"
+          name="confimeEmail"
+          #confimeEmail
+          formControlName="confimeEmail"
+        ></ion-input>
+      </div>
+
+      <div class="termos">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="1">
+              <ion-checkbox
+                mode="md"
+                (click)="validTermos()"
+                formControlName="termos"
+              ></ion-checkbox>
+            </ion-col>
+            <ion-col size="11">
+              Declaro que li e aceito os <strong>termos e condições</strong> e a
+              <strong>poítica de privacidade.</strong>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <div class="termos">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="1">
+              <ion-checkbox mode="md" formControlName="sms"></ion-checkbox>
+            </ion-col>
+            <ion-col size="11">
+              Quero receber cupons de desconto e ofertas do IRÃO por e-mail e
+              SMS.
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <div class="conteiner-botao">
+        <ion-button
+          type="submit"
+          [disabled]="this.validFGroupBotton"
+          [ngClass]="!this.validFGroupBotton ? 'botao-green' : 'botao' "
+          class="botao"
+          shape="round"
+          ><p class="dizer-botao">Cadastrar</p></ion-button
+        >
+      </div>
+
+    </div>
+  </form>
+</ion-content>

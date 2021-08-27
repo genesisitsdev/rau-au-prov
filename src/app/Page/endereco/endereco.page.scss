@@ -1,0 +1,133 @@
+ion-title{
+  color:#bd0000;
+  font-weight: 800;
+  left: -20px;
+  text-transform: uppercase;
+}
+
+ion-toolbar{
+  border-bottom: 1px #bd0000 solid;
+  text-align: center;
+}
+
+ion-back-button{
+  color:#bd0000;
+}
+
+.mensagem{
+  font-family: 'Gotham';
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 40px;
+
+}
+
+.form-conteiner{
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+}
+
+
+ion-input{
+  height: 40px;;
+  font-family: 'Gotham';
+  font-size: 12px;
+  font-weight: 600;
+  border:#bd0000 1px solid;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  --placeholder-color: #000000 !important;
+  --placeholder-opacity: 1;
+  --padding-start: 5px;
+  // --padding-bottom: 30px;
+  }
+
+  .item{
+    font-family: 'Gotham';
+    font-size: 12px;
+    font-weight: 400;
+    padding-left: 10px;
+    padding-right: 10px;
+    // padding-top: 10px;
+    margin-bottom: 10px;
+
+  }
+
+  .input-menor{
+    font-family: 'Gotham';
+    font-size: 12px;
+    font-weight: 400;
+    padding-left: 6px;
+    padding-right: 2px;
+    padding-bottom: 10px;
+    vertical-align: middle;
+  }
+
+  .check{
+    left: 1px;
+  }
+
+  ion-textarea{
+    font-family: 'Gotham';
+    font-size: 12px;
+    font-weight: 600;
+    border:#bd0000 1px solid;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    --placeholder-color: #000000 !important;
+    --placeholder-opacity: 1;
+    --padding-start: 5px;
+  }
+
+  .conteiner-botao{
+    justify-content: center;
+    text-align: center;
+    padding:20px;
+  }
+
+  ion-button {
+    --background: rgba(255, 90, 90, 0.35);
+    width: 176px;
+    height: 40px;
+    font-family: 'Gotham Bold';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    /* or 000% */
+    // display: flex;
+    // right: -30px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    }
+
+    ion-grid {
+      ion-col{
+        --ion-grid-padding: 10px;
+
+      }
+    }
+
+    .green {
+      border: #2dd36f 2px solid;
+    }
+
+    .desabled {
+      border: #9AA0A6 2px solid;
+    }
+
+    .botao{
+      --color: #000000;
+      --background: rgba(255, 90, 90, 0.35);
+      // padding-top: 40px;
+    }
+
+    .botao-green {
+      --background: #2dd36f;
+      --color: #FFFFFF;
+    }

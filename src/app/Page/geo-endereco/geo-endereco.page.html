@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+      text=""
+      icon="arrow-back"
+      color="danger"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">LOCALIZAÇÃO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="container-saudacao">
+    <p class="saudacao">Que legal você chegou até aqui!</p>
+      <p class="mensagem">Escolha a melhor forma de te encontrarmos.</p>
+    </div>
+
+    <div class="container-botao-localizacao">
+      <ion-button color="danger" class="botao-localizacao" (click)="mapa()">
+        <ion-icon slot="start" name="navigate"></ion-icon>
+        USAR MINHA LOCAZAÇÃO
+      </ion-button>
+    </div>
+
+    <div class="conteiner-separador">
+      <p class="separador">ou</p>
+    </div>
+
+    <div class="container-botao-endereco">
+      <ion-button color="danger" class="botao-endereco" fill="clear" (click)="endereco()">
+        <ion-icon slot="start" name="navigate"></ion-icon>
+        CADASTRAR MEU ENDEREÇO
+      </ion-button>
+    </div>
+
+
+
+    <div class="footer">
+      <div class="logo">
+        <img src="../../../assets/img/rauau/LOGO3.png">
+      </div>
+    </div>
+
+</ion-content>

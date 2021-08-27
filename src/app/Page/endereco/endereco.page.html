@@ -1,0 +1,229 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <!-- <ion-back-button
+          [text]="buttonText"
+          [icon]="buttonIcon">
+      </ion-back-button> -->
+    </ion-buttons>
+    <ion-title>Endereço</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="mensagem">
+    <p>Esse endereço será classificado como principal.</p>
+    <p>Você poderá adicionar novos endereços depois.</p>
+  </div>
+
+  <div class="form-conteiner">
+
+    <form [formGroup]="fGroup" (ngSubmit)="setEndereco()">
+
+  <div class="item">
+
+  <ion-input
+  type="text"
+  placeholder="Descrição ex: Casa, Trabalho e etc..."
+  [ngClass]="!fGroup.controls.descricao.hasError('required') ? 'green' : '' "
+  name="descricao"
+  autofocus="true"
+  #descricao
+  formControlName="descricao"
+  >
+  </ion-input>
+
+</div>
+<div class="item">
+  <ion-input
+  type="tel"
+  placeholder="CEP"
+  [ngClass]="!fGroup.controls.cep.hasError('required') || listEndereco ? 'green' : '' "
+  [value]="listEndereco ? listEndereco.cep : ''"
+  name="cep"
+  #cep
+  formControlName="cep"
+  [brmasker]="{mask:'00000-00', len:9,  type:'num', userCaracters: false}"
+  (ionInput)="getCep($event.target)"
+  >
+  <ion-label>
+    <ion-spinner
+    name="lines"
+    *ngIf="this.inputLoading"
+    ></ion-spinner>
+  </ion-label>
+
+</ion-input>
+{{ cepMapa }}
+</div>
+
+<div class="item">
+  <ion-input
+  type="text"
+  placeholder="Endereço"
+  [ngClass]="!fGroup.controls.endereco.hasError('required') || listEndereco ? 'green' : '' "
+  [value]="listEndereco ? listEndereco.endereco : ''"
+  name="endereco"
+  #endereco
+  formControlName="endereco"
+  >
+
+</ion-input>
+</div>
+
+<ion-grid class="input-menor">
+  <ion-row>
+    <ion-col size="5">
+      <div >
+       <ion-input
+       type="number"
+       placeholder="Número"
+       name="numero"
+       [ngClass]="{'green':!tratSemNumero && !fGroup.controls.numero.hasError('required'),
+                    'desabled':tratSemNumero}"
+      #numero
+      [brmasker]="{mask:'00000', len:5,  type:'num', userCaracters: true}"
+      [attr.disabled]="tratSemNumero"
+      formControlName="numero"
+      ></ion-input>
+      </div>
+    </ion-col>
+    <ion-col size="7">
+      <div >
+        <ion-input
+        type="text"
+        [placeholder]="listEndereco && !tratSemComplemento &&
+                       !fGroup.controls.complemento.hasError('required') ? listEndereco.complemento : 'Complemento' "
+        minlength="3"
+        maxlength="50"
+        [ngClass]="{'green':!tratSemComplemento && !fGroup.controls.complemento.hasError('required'),
+        'desabled':tratSemComplemento}"
+        name="complemento"
+        #complemento
+        [attr.disabled]="tratSemComplemento"
+        formControlName="complemento"
+        ></ion-input>
+      </div>
+    </ion-col>
+
+      <ion-col size="1">
+        <ion-checkbox
+        checked="false"
+        mode="md"
+        color="danger"
+        name="semNumero"
+        [value]="false"
+        [required]="!tratSemNumero ? true : false"
+        [attr.disabled]="!fGroup.controls.numero.hasError('required') &&
+                          !tratSemNumero && fGroup.value.numero.length > 2"
+        formControlName="semNumero"
+        (ionChange)="semNumero($event)"
+            ></ion-checkbox>
+      </ion-col>
+      <ion-col size="4">
+        Sem Número
+      </ion-col>
+      <ion-col size="1">
+        <ion-checkbox
+            checked="false"
+            mode="md"
+            color="danger"
+            name="semComplemento"
+            [value]="false"
+            [required]="!tratSemComplemento ? true : false"
+            [attr.disabled]="!fGroup.controls.complemento.hasError('required') &&
+                              !tratSemNumero && fGroup.value.complemento.length > 3"
+            formControlName="semComplemento"
+            (ionChange)="semComplemento($event)"
+        ></ion-checkbox>
+      </ion-col>
+      <ion-col size="6">
+        Sem Complemento
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+
+
+
+
+<div class="item">
+  <ion-textarea
+  type="text"
+  rows="7"
+  cols="20"
+  placeholder="Ponto de referência (opicional)"
+  [ngClass]="!fGroup.controls.referencia.hasError('required') ? 'green' : '' "
+  name="referencia"
+  #referencia
+  formControlName="referencia"></ion-textarea>
+</div>
+<div class="item">
+  <ion-input
+  type="text"
+  placeholder="Bairro"
+  [value]="listEndereco ? listEndereco.bairro: ''"
+  [ngClass]="!fGroup.controls.bairro.hasError('required') || listEndereco ? 'green' : '' "
+  name="bairro"
+  #bairro
+  formControlName="bairro" required></ion-input>
+</div>
+
+<div >
+  <ion-grid class="input-menor">
+    <ion-row>
+      <ion-col size="9">
+  <ion-input
+  type="text"
+  placeholder="Cidade"
+  [value]="listEndereco ? listEndereco.cidade: ''"
+  [ngClass]="!fGroup.controls.cidade.hasError('required') || listEndereco ? 'green' : '' "
+  name="cidade"
+  #cidade
+  formControlName="cidade" required></ion-input>
+
+</ion-col>
+    <ion-col size="3">
+
+
+  <ion-input
+  type="text"
+  placeholder="UF"
+  [value]="listEndereco ? listEndereco.uf: ''"
+  [ngClass]="!fGroup.controls.uf.hasError('required') || listEndereco ? 'green' : '' "
+  name="uf"
+  #uf
+  formControlName="uf" required></ion-input>
+</ion-col>
+</ion-row>
+</ion-grid>
+</div>
+
+<div class="conteiner-botao">
+  <ion-button
+      type="submit"
+      [ngClass]="!fGroup.valid && listEndereco && !fGroup.controls.descricao.hasError('required') && !fGroup.controls.numero.hasError('required')
+      && !tratSemNumero && fGroup.controls.complemento.hasError('required') && tratSemComplemento ||
+
+      !fGroup.valid && listEndereco && !fGroup.controls.descricao.hasError('required') && fGroup.controls.numero.hasError('required')
+      && tratSemNumero && !fGroup.controls.complemento.hasError('required') && !tratSemComplemento ||
+
+      fGroup.valid && !listEndereco ? 'botao-green' : 'botao' "
+      shape="round"
+      [disabled]="!fGroup.valid && !listEndereco ||
+      !fGroup.valid && listEndereco && fGroup.controls.descricao.hasError('required') ||
+      !fGroup.valid && !fGroup.value.numero && !tratSemNumero || !fGroup.valid && !fGroup.value.complemento && !tratSemComplemento"
+      ><p class="dizer-botao">Confirmar</p></ion-button>
+ <p>{{fGroup.valid}}</p>
+<p>Form name: {{ fGroup.controls.complemento.hasError('required') | json }}</p>
+<p>Form name: {{ fGroup.controls.numero.hasError('required') | json }}</p>
+<!-- <p>Form name: {{ fGroup.controls.cep.hasError('pattern') | json }}</p> -->
+<!-- <p>Form name: {{ fGroup.controls.complemento.hasError('required') | json }}</p> -->
+<!-- <p>Form name: {{ fGroup.controls.endereco.hasError('pattern') | json }}</p> -->
+
+
+</div>
+</form>
+</div>
+
+</ion-content>

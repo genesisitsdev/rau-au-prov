@@ -1,0 +1,103 @@
+ion-title{
+  color:#bd0000;
+  font-weight: 800;
+  left: -20px;
+}
+
+ion-toolbar{
+  border-bottom: 1px #bd0000 solid;
+}
+
+ion-back-button{
+  color:#bd0000;
+}
+
+.container-saudacao{
+  width: 100%;
+  text-align: center;
+  padding-top: 100px;
+  padding-inline: 20px;
+}
+
+.saudacao{
+  font-family: 'Gotham Bold';
+  font-size: 12px;
+  align-items: center;
+}
+
+.mensagem{
+  font-family: 'Gotham';
+  font-size: 12px;
+  align-items: center;
+}
+
+.container-botao-localizacao{
+  width: 100%;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.container-botao-endereco{
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.botao-localizacao{
+
+  width: 320px;
+  height: 50px !important;
+  //background: #bd0000;
+  //border-bottom: #bd0000 1px solid;
+  font-size: 16px;
+  font-weight: bold;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.botao-endereco{
+
+  width: 320px;
+  height: 50px !important;
+  //background: #bd0000;
+  border: #bd0000 1px solid;
+  font-size: 16px;
+  font-weight: bold;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.conteiner-separador{
+  padding-top: 30px;
+  //padding-bottom: 10px;
+  text-align: center;
+}
+
+.separador{
+  font-family: 'Gotham Bold';
+}
+
+.footer{
+  position: absolute;
+  width: 539px;
+  height: 705.73px;
+  left: -82px;
+  top: 528px;
+
+  background: #000000;
+  border: 10px solid #DB0000;
+  border-radius: 269.5px  269.5px  0px 0px;
+  // transform: matrix(1, 0, 0, -1, 0, 0);
+  }
+
+  .logo{
+    position: absolute;
+    width: 186px;
+    height: 98px;
+    justify-content: center;
+    left: 165px;
+    top: 10px;
+    z-index: 9999;
+  }

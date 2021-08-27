@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+      text=""
+      icon="arrow-back"
+      color="danger"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">LOCALIZAÇÃO NO MAPA</ion-title>
+  <!-- </ion-toolbar>
+  <ion-toolbar> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar placeholder="Destino" (ionChange)="buscarEndereco($event)" class="searchbar"></ion-searchbar>
+
+  <ion-list [hidden]="!this.listaEndereco.length">
+    <ion-item button *ngFor="let local of listaEndereco" lines="full" (click)="tracarRota(local)">
+      {{local.description}}
+    </ion-item>
+  </ion-list>
+  <div #map id="map">
+  </div>
+
+  <div class="content-botton">
+    <ion-button
+      (click)="endereco(this.cep)"
+      class="botao"
+      shape="round"><p class="botao">Comfirmar Local</p></ion-button>
+  </div>
+
+</ion-content>

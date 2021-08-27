@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+          text=""
+          icon="arrow-back"
+          color="danger"></ion-back-button>
+      <!-- <ion-back-button
+          [text]="buttonText"
+          [icon]="buttonIcon">
+      </ion-back-button> -->
+    </ion-buttons>
+    <ion-title class="ion-text-center">CADASTRO</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form [formGroup]="fGroup" (ngSubmit)="setUsuario()">
+  <div class="form-conteiner">
+
+    <div class="item">
+      <ion-input
+          type="text"
+          [ngClass]="!fGroup.controls.name.hasError('required') && !fGroup.controls.name.hasError('pattern') ? 'green' : null "
+          inputmode="text"
+          placeholder="Nome*"
+          autofocus="true"
+          autocomplete="off"
+          formControlName="name"
+          showCancelButton="always"></ion-input>
+    </div>
+  <div class="item">
+    <ion-input
+        type="email"
+        [ngClass]="!fGroup.controls.email.hasError('required') && !fGroup.controls.email.hasError('pattern') ? 'green' : null "
+        inputmode="email"
+        placeholder="E-mail*"
+        autofocus="true"
+        autocomplete="off"
+        formControlName="email"
+        showCancelButton="always"></ion-input>
+  </div>
+
+  <div class="item">
+    <ion-input
+        type="password"
+        [ngClass]="!fGroup.controls.password.hasError('required') && !fGroup.controls.password.hasError('pattern')? 'green' : null "
+        placeholder="Senha"
+        formControlName="password"></ion-input>
+        <ion-label
+          *ngIf="fGroup.controls.password.hasError('required') && !fGroup.controls.password.hasError('required')"
+          class="ion-text-wrap">
+            As senhas devem ter pelo menos 6 caracteres, letras maiusculas e minusculas
+          </ion-label>
+
+  </div>
+  <div class="item">
+    <ion-input
+        type="password"
+        [ngClass]="!fGroup.controls.password_confirmation.hasError('required') && !fGroup.controls.password_confirmation.hasError('pattern') && fGroup.controls.password.value === fGroup.controls.password_confirmation.value ? 'green' : null "
+        placeholder="Confirmação de Senha"
+        formControlName="password_confirmation"></ion-input>
+        <ion-label
+          *ngIf="fGroup.controls.password_confirmation.hasError('required') && fGroup.controls.password_confirmation.hasError('pattern') ||
+            fGroup.controls.password.value !== fGroup.controls.password_confirmation.value">Senhas não coincidem</ion-label>
+  </div>
+
+  <div class="conteiner-botao">
+    <ion-button
+      [disabled]="!fGroup.valid"
+      type="submit"
+      [ngClass]="fGroup.valid ? 'botao-green' : 'botao' "
+      shape="round">
+      <p class="dizer-botao">Cadastrar</p>
+    </ion-button>
+
+  </div>
+  <!-- <p>Form value: {{ fGroup.value | json }}</p> -->
+  <!-- <p>Form value: {{ fGroup.controls.senha.hasError('pattern') | json }}</p> -->
+  <!-- <p>Form status: {{ fGroup.valid| json }}</p>
+  <p>Form name: {{ fGroup.controls.name.hasError('required') | json }}</p>
+  <p>Form email: {{ fGroup.controls.email.hasError('pattern') | json }}</p>
+  <p>Form password: {{ fGroup.controls.senha.hasError('pattern') | json }}</p>
+  <p>Form confirmeSenha: {{ fGroup.controls.name.hasError('pattern') | json }}</p> -->
+</div>
+</form>
+</ion-content>
