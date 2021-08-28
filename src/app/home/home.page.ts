@@ -2,7 +2,7 @@ import { GeolocalizacaoService } from './../Services/Geolocalizacao/geolocalizac
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../Services/Auth/auth.service';
 import { FranquiaService } from './../Services/Franquias/franquia.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -86,7 +86,8 @@ export class HomePage implements OnInit{
 
   constructor(private geoLocation: GeolocalizacaoService,
               private auth: AuthService,
-              private franquiaService: FranquiaService) {}
+              private franquiaService: FranquiaService,
+              private router: Router) {}
 
 
 
@@ -106,7 +107,7 @@ export class HomePage implements OnInit{
         // console.log('Endereço Retornado => ', resp[0]);
       }).catch(erro =>{
         console.log(erro);
-      })
+      });
   }
 
   getFranquias() {
@@ -173,6 +174,10 @@ export class HomePage implements OnInit{
     // this.usuario = JSON.parse(atob(localStorage.getItem('user')));
     // this.nomeUsuario =  localStorage.getItem('user') ? this.usuario : null;
     // console.log('dados Usuário ', this.usuario);
+  }
+
+  navigarParaCategoria(idCategoria: any) {
+    this.router.navigate(['/categoria', { idCategoria }]);
   }
 
 }

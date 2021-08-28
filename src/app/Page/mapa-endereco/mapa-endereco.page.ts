@@ -251,7 +251,7 @@ export class MapaEnderecoPage implements OnInit {
         cep:ceps
 
       }
-    }
+    };
     this.router.navigate(['endereco'], navigationExtra);
     // console.log('Cep do Botão: ',cep);
 

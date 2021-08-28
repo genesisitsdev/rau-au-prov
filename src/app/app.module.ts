@@ -17,8 +17,6 @@ import { TokenInterceptorService } from './Services/Token-Interceptor/token-inte
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -29,7 +27,7 @@ import { AppRoutingModule } from './app-routing.module';
             SplashScreenPageModule,
             FormsModule,
             ReactiveFormsModule,
-            HttpClientModule,
+            HttpClientModule
             // NgxMaskModule.forRoot({
             //   dropSpecialCharacters: true
             // }),

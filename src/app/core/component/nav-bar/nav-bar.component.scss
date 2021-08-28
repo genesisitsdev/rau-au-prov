@@ -1,0 +1,21 @@
+ion-title{
+    color:#fff;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+ion-toolbar {
+    border-bottom: 1px #bd0000 solid;
+
+    img.imgRauau {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 8px;
+        right: 12px;
+    }
+}
+
+ion-back-button{
+    color:#bd0000;
+}

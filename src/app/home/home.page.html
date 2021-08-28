@@ -65,7 +65,7 @@
       <ion-slide class="slideTopo" *ngFor="let imagem of seguimentos">
         <div class="containerImagem ion-trxt-center">
 
-            <img [src]="imagem.img" class="imgSlide"/>
+            <img [src]="imagem.img" class="imgSlide" (click)="navigarParaCategoria(imagem.id)" />
 
         <p>{{ imagem.nome }}</p>
         </div>
@@ -159,7 +159,7 @@
                     <p class="marca">{{ item.marca }}</p>
 
                   </div>
-                  <p class="preco"><span class="saudacaoDesconto">Aproveite esse desconto</span> <br />{{ ultimos.preco }}</p>
+                  <p class="preco"><span class="saudacaoDesconto">Aproveite esse desconto</span> <br />{{ item.preco }}</p>
                 </div>
 
               </ion-col>
