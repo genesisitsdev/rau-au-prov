@@ -105,40 +105,12 @@
             </ion-slides>
         </ion-header>
 
-
-
         <ion-grid>
             <ion-row>
                 <ion-col class="descontoFixo" offset="0.3" *ngFor="let item of fixo">
 
                   <component-produto [produto]="item" class="produtoLista"></component-produto>
-
-
-                  <!-- <div class="descontoValor">
-                        <div class="">
-                            <ion-button fill="clear" class="valorDescontoFont">
-                                <ion-icon slot="start" name="caret-down-sharp"></ion-icon>
-                                {{ item.desconto }}
-                            </ion-button>
-                        </div>
-
-                        <div class="imgProduto">
-                            <img [src]="item.img" />
-                        </div>
-
-                        <div class="descricaoProduto">
-                            <p class="nome">{{ item.nome }}</p>
-                            <p class="marca">{{ item.marca }}</p>
-
-                        </div>
-                        <p class="preco"><span class="saudacaoDesconto">Aproveite esse desconto</span> <br />{{
-                          item.preco }}</p>
-                    </div> -->
-
                 </ion-col>
-                <!-- <ion-col class="cardsPromocao" offset="0.5">
-                ion-col
-              </ion-col> -->
             </ion-row>
         </ion-grid>
 

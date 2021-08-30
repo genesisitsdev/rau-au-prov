@@ -1,27 +1,28 @@
-<section class="produtoComponente">
+<section class="produtoComponente" *ngIf="produtoComponent?.pid">
   <div class="produtoDesconto">
       <ion-button fill="clear" class="produtoValorDeDesconto">
           <ion-icon slot="start" name="caret-down-sharp"></ion-icon>
-          <span>{{ produtoComponent.desconto | slice:0:-3 }}</span>
+          <span>{{ produtoComponent?.desconto | slice:0:-3 }}</span>
       </ion-button>
-      <div class="produtoFavorito">
-        <ion-icon name="heart-outline"></ion-icon>
-      </div>
+      <button class="produtoFavorito">
+          <ion-icon slot="start" name="heart-outline"></ion-icon>
+      </button>
   </div>
 
   <div class="produtoImagemUrl">
-      <img [src]="produtoComponent.imagemUrl" />
+      <img [src]="produtoComponent?.imagemUrl" />
   </div>
 
   <div class="produtoDescricao">
-      <p class="produtoNome">{{ produtoComponent.nome }}</p>
-      <p class="produtoMarca">{{ produtoComponent.marca }}</p>
-
+      <p class="produtoNome">{{ produtoComponent?.nome }}</p>
+      <p class="produtoMarca">{{ produtoComponent?.marca}}
+        <span *ngIf="produtoComponent?.categoriaCorrente"> | {{produtoComponent?.categoriaCorrente}}</span>
+      </p>
   </div>
   <p class="produtoPreco">
     <span class="produtoSaudacaoDeDesconto">
       Aproveite esse desconto
     </span>
     <br>
-    {{produtoComponent.preco }}</p>
+    {{produtoComponent?.preco }}</p>
 </section>

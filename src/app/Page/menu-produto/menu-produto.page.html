@@ -5,5 +5,36 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="" offset="0.2" *ngFor="let produto of produtos" [size]="5.6">
+
+        <component-produto [produto]="produto" class="produtoLista"></component-produto>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="baner-container" [size]="12">
+        <ion-slides pager="true" [options]="slideOpts">
+          <ion-slide *ngFor="let baner of baners">
+
+            <component-baner [baner]="baner"></component-baner>
+
+          </ion-slide>
+        </ion-slides>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="" offset="0.2" *ngFor="let produto of produtos" [size]="5.6">
+
+        <component-produto [produto]="produto" class="produtoLista"></component-produto>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
 
 </ion-content>

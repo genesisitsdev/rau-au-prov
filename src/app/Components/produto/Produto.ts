@@ -7,6 +7,7 @@ interface IProduto {
   preco: string;
   desconto: string;
   imagemUrl: string;
+  categoriaCorrente: string
 }
 
 interface IProdutoDetalhe {
@@ -22,14 +23,16 @@ export class Produto implements IProduto {
   preco: string;
   desconto: string;
   imagemUrl: string;
+  categoriaCorrente: string
 
-  public constructor(produtoAbstrato: any = { id: '', nome: '', marca: '', preco: '', desconto: '', img: ''}) {
+  public constructor(produtoAbstrato: any = { id: '', nome: '', marca: '', preco: '', desconto: '', img: '', categoria: ''}) {
     this.pid = produtoAbstrato.id
     this.nome = produtoAbstrato.nome
     this.marca = produtoAbstrato.marca
     this.preco = produtoAbstrato.preco
     this.desconto = produtoAbstrato.desconto
     this.imagemUrl = produtoAbstrato.img
+    this.categoriaCorrente = produtoAbstrato.categoria
   }
 }
 

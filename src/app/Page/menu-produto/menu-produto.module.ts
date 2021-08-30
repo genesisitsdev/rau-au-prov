@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { MenuProdutoPageRoutingModule } from './menu-produto-routing.module';
 
 import { MenuProdutoPage } from './menu-produto.page';
+import { ProdutoComponent } from "../../Components/produto/produto.component"
+import { BanerComponent } from "../../Components/banner/banner.component"
 
 @NgModule({
   imports: [
@@ -15,6 +17,13 @@ import { MenuProdutoPage } from './menu-produto.page';
     IonicModule,
     MenuProdutoPageRoutingModule
   ],
-  declarations: [MenuProdutoPage]
+  declarations: [
+    MenuProdutoPage,
+    ProdutoComponent,
+    BanerComponent],
+  exports: [
+    ProdutoComponent,
+    BanerComponent
+  ]
 })
 export class MenuProdutoPageModule {}
