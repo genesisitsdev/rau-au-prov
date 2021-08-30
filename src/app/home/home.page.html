@@ -1,177 +1,150 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar color="dark">
-    <ion-buttons slot="start">
-      <ion-icon
-        color="light"
-        slot="icon-only"
-        name="person-circle-outline"
-        class="icone1x"
-      ></ion-icon>
-    </ion-buttons>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-icon color="light" slot="icon-only" name="person-circle-outline" class="icone1x"></ion-icon>
+        </ion-buttons>
 
-    <ion-title class="ion-text-center" expand="full">
-      <ion-buttons>
-        <!-- <ion-icon slot="icon-only" name="basket-outline" class="icone1x" color="light"></ion-icon> -->
-        <img src="../../assets/img/rauau/LOGO3.png" class="imgToobar">
-      </ion-buttons>
-    </ion-title>
+        <ion-title class="ion-text-center" expand="full">
+            <ion-buttons>
+                <!-- <ion-icon slot="icon-only" name="basket-outline" class="icone1x" color="light"></ion-icon> -->
+                <img src="../../assets/img/rauau/LOGO3.png" class="imgToobar">
+            </ion-buttons>
+        </ion-title>
 
 
-    <ion-buttons slot="end">
-      <ion-icon slot="icon-only" name="basket-outline" class="icone1x" color="light"></ion-icon>
-    </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-icon slot="icon-only" name="basket-outline" class="icone1x" color="light"></ion-icon>
+        </ion-buttons>
 
-    <ion-buttons slot="end">
-      <ion-icon slot="icon-only" name="menu-outline" class="icone1x" color="light"></ion-icon>
-    </ion-buttons>
-    <ion-title class="ion-text-center toobarAlign" expand="full">
-      <ion-icon
-        slot="icon-only"
-        name="person-circle-outline"
-        class="icone1x"
-      ></ion-icon>
+        <ion-buttons slot="end">
+            <ion-icon slot="icon-only" name="menu-outline" class="icone1x" color="light"></ion-icon>
+        </ion-buttons>
+        <ion-title class="ion-text-center toobarAlign" expand="full">
+            <ion-icon slot="icon-only" name="person-circle-outline" class="icone1x"></ion-icon>
 
-    </ion-title>
-  </ion-toolbar>
+        </ion-title>
+    </ion-toolbar>
 
-  <ion-toolbar class="ion-text-center" color="dark">
-     <ion-button fill="clear" *ngIf="tollbarEndereco">
-        <ion-icon
-          slot="start"
-          name="location"
-          class="iconeLocalizacao"
-        ></ion-icon>
-        <p class="ion-text-capitalize botaoUsuario ion-text-nowrap ion-text-center">
-          {{ tollbarEndereco }}
-        </p>
-      </ion-button>
+    <ion-toolbar class="ion-text-center" color="dark">
+        <ion-button fill="clear" *ngIf="tollbarEndereco">
+            <ion-icon slot="start" name="location" class="iconeLocalizacao"></ion-icon>
+            <p class="ion-text-capitalize botaoUsuario ion-text-nowrap ion-text-center">
+                {{ tollbarEndereco }}
+            </p>
+        </ion-button>
 
-      <ion-button fill="clear" *ngIf="!tollbarEndereco">
-        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
-      </ion-button>
-  </ion-toolbar>
+        <ion-button fill="clear" *ngIf="!tollbarEndereco">
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        </ion-button>
+    </ion-toolbar>
 
-  <ion-toolbar color="dark">
-    <ion-title class="ion-text-center">
-      <p class="rauau">RAU<span style="color: #FF0000;">-</span>AU</p>
-      <p class="saudacao">Aqui seu pet é mais feliz.</p>
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="dark">
+        <ion-title class="ion-text-center">
+            <p class="rauau">RAU<span style="color: #FF0000;">-</span>AU</p>
+            <p class="saudacao">Aqui seu pet é mais feliz.</p>
+        </ion-title>
+    </ion-toolbar>
 
-  <ion-toolbar color="dark">
-    <ion-slides [options]="slideOpts">
-      <!-- <ion-slide *ngFor="let options of optionsFranquias"> -->
+    <ion-toolbar color="dark">
+        <ion-slides [options]="slideOpts">
+            <!-- <ion-slide *ngFor="let options of optionsFranquias"> -->
 
-      <ion-slide class="slideTopo" *ngFor="let imagem of seguimentos">
-        <div class="containerImagem ion-trxt-center">
+            <ion-slide class="slideTopo" *ngFor="let imagem of seguimentos">
+                <div class="containerImagem ion-trxt-center">
 
-            <img [src]="imagem.img" class="imgSlide"/>
+                    <img [src]="imagem.img" class="imgSlide" />
 
-        <p>{{ imagem.nome }}</p>
-        </div>
+                    <p>{{ imagem.nome }}</p>
+                </div>
 
-      </ion-slide>
-    </ion-slides>
-  </ion-toolbar>
+            </ion-slide>
+        </ion-slides>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="subContainer">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="small">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div class="subContainer">
-
-
-    <ion-header class="ion-no-border">
-      <ion-slides [pager]="true" [scrollbar]="true" [options]="promoOpts">
-        <!-- <ion-slide *ngFor="let options of optionsFranquias"> -->
-
-        <ion-slide class="header" *ngFor="let imagem of promo">
-          <img [src]="imagem.img" class="heraderImg" />
-        </ion-slide>
-      </ion-slides>
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="small">Blank</ion-title>
+        </ion-toolbar>
     </ion-header>
 
+    <div class="subContainer">
 
+
+        <ion-header class="ion-no-border">
+            <ion-slides [pager]="true" [scrollbar]="true" [options]="promoOpts">
+                <!-- <ion-slide *ngFor="let options of optionsFranquias"> -->
+
+                <ion-slide class="header" *ngFor="let imagem of promo">
+                    <img [src]="imagem.img" class="heraderImg" />
+                </ion-slide>
+            </ion-slides>
+        </ion-header>
 
         <p class="produtosDescontoTitle ion-text-left">Produtos com Desconto <span class="verTodos">Ver todos</span></p>
 
         <ion-header class="ion-no-border">
-          <ion-slides [options]="ultimoPedidoOpts">
-            <ion-slide class="acertoFlex" *ngFor="let ultimos of CardDesconto">
-              <div class="slideDesconto" >
-                <div class="descontoValor">
-                  <ion-button fill="clear" class="valorDescontoFont">
-                    <ion-icon slot="start" name="caret-down-sharp"></ion-icon>
-                  {{ ultimos.desconto }}
-                  </ion-button>
-                </div>
+            <ion-slides [options]="ultimoPedidoOpts">
+                <ion-slide class="acertoFlex" *ngFor="let ultimos of CardDesconto">
 
-                <div class="imgProduto">
-                  <img [src]="ultimos.img"/>
-                </div>
+                  <component-produto [produto]="ultimos" class="produtoCard"></component-produto>
 
-                <div class="descricaoProduto">
-                  <p class="nome">{{ ultimos.nome }}</p>
-                  <p class="marca">{{ ultimos.marca }}</p>
-
-                </div>
-                <p class="preco"><span class="saudacaoDesconto">Aproveite esse desconto</span> <br />{{ ultimos.preco }}</p>
-              </div>
-            </ion-slide>
-          </ion-slides>
+                </ion-slide>
+            </ion-slides>
         </ion-header>
 
         <ion-header>
-          <ion-slides [options]="marcasOpts">
-            <ion-slide class="slidesMarcas" *ngFor="let marca of marcas">
-            <div>
-               <img [src]="marca.img" class="imgMarcas">
-            </div>
+            <ion-slides [options]="marcasOpts">
+                <ion-slide class="slidesMarcas" *ngFor="let marca of marcas">
+                    <div>
+                        <img [src]="marca.img" class="imgMarcas">
+                    </div>
 
-            </ion-slide>
-          </ion-slides>
+                </ion-slide>
+            </ion-slides>
         </ion-header>
 
 
 
-          <ion-grid>
+        <ion-grid>
             <ion-row>
-              <ion-col class="descontoFixo" offset="0.5" *ngFor="let item of fixo">
+                <ion-col class="descontoFixo" offset="0.3" *ngFor="let item of fixo">
 
-                <div class="descontoValor">
-                  <div class="">
-                    <ion-button fill="clear" class="valorDescontoFont">
-                      <ion-icon slot="start" name="caret-down-sharp"></ion-icon>
-                    {{ item.desconto }}
-                    </ion-button>
-                  </div>
+                  <component-produto [produto]="item" class="produtoLista"></component-produto>
 
-                  <div class="imgProduto">
-                    <img [src]="item.img"/>
-                  </div>
 
-                  <div class="descricaoProduto">
-                    <p class="nome">{{ item.nome }}</p>
-                    <p class="marca">{{ item.marca }}</p>
+                  <!-- <div class="descontoValor">
+                        <div class="">
+                            <ion-button fill="clear" class="valorDescontoFont">
+                                <ion-icon slot="start" name="caret-down-sharp"></ion-icon>
+                                {{ item.desconto }}
+                            </ion-button>
+                        </div>
 
-                  </div>
-                  <p class="preco"><span class="saudacaoDesconto">Aproveite esse desconto</span> <br />{{ ultimos.preco }}</p>
-                </div>
+                        <div class="imgProduto">
+                            <img [src]="item.img" />
+                        </div>
 
-              </ion-col>
-              <!-- <ion-col class="cardsPromocao" offset="0.5">
+                        <div class="descricaoProduto">
+                            <p class="nome">{{ item.nome }}</p>
+                            <p class="marca">{{ item.marca }}</p>
+
+                        </div>
+                        <p class="preco"><span class="saudacaoDesconto">Aproveite esse desconto</span> <br />{{
+                          item.preco }}</p>
+                    </div> -->
+
+                </ion-col>
+                <!-- <ion-col class="cardsPromocao" offset="0.5">
                 ion-col
               </ion-col> -->
             </ion-row>
-          </ion-grid>
+        </ion-grid>
 
 
 
 
 
-  </div>
+    </div>
 </ion-content>

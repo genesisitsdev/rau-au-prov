@@ -1,0 +1,27 @@
+<section class="produtoComponente">
+  <div class="produtoDesconto">
+      <ion-button fill="clear" class="produtoValorDeDesconto">
+          <ion-icon slot="start" name="caret-down-sharp"></ion-icon>
+          <span>{{ produtoComponent.desconto | slice:0:-3 }}</span>
+      </ion-button>
+      <div class="produtoFavorito">
+        <ion-icon name="heart-outline"></ion-icon>
+      </div>
+  </div>
+
+  <div class="produtoImagemUrl">
+      <img [src]="produtoComponent.imagemUrl" />
+  </div>
+
+  <div class="produtoDescricao">
+      <p class="produtoNome">{{ produtoComponent.nome }}</p>
+      <p class="produtoMarca">{{ produtoComponent.marca }}</p>
+
+  </div>
+  <p class="produtoPreco">
+    <span class="produtoSaudacaoDeDesconto">
+      Aproveite esse desconto
+    </span>
+    <br>
+    {{produtoComponent.preco }}</p>
+</section>
