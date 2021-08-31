@@ -1,0 +1,65 @@
+.produtoDetalhe {
+  --backgroud: #FFFFFF;
+  background-color: #FFFFFF;
+
+  > * {
+    --border-style: none;
+  }
+
+  .produtoDetalheCarrossel {
+    margin-bottom: 48px;
+  }
+
+  .produtoDetalheMarca {
+    color: rgba(0,0,0,0.5);
+    font-size: 14px;
+  }
+
+  .produtoDetalheAvaliacoes {
+    color: rgba(0,0,0,0.5);
+  }
+
+
+  .produtoDetalheRanking {
+
+    > ion-icon {
+      font-size: 18px;
+      padding-right: 8px;
+    }
+  }
+
+  .produtoDetalhePrecoBar {
+
+    width: 100%;
+    margin-top: 16px;
+    > * {
+      min-width: 50%;
+      --border-style: none;
+    }
+
+    .produtoDetalhePreco {
+      font-size: 28px;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+      color: #5555d9;
+    }
+
+    .produtoDetalheFrete {
+      color: #119d0e;
+      line-height: 12px;
+
+      > * {
+        font-size: 24px;
+      }
+    }
+
+    .produtoDetalhePrecoButton {
+      min-height: 56px;
+      min-width: 56px;
+      font-size: 24px;
+      color: #3aacd1;
+      --border-color: #3aacd1;
+    }
+  }
+}

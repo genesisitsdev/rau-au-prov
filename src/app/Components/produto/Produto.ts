@@ -6,7 +6,7 @@ interface IProduto {
   desconto: string;
   imagemUrl: string;
   categoriaCorrente: string
-  favorito: boolean
+  tipo: string
 }
 
 export class Produto implements IProduto {
@@ -17,9 +17,19 @@ export class Produto implements IProduto {
   desconto: string;
   imagemUrl: string;
   categoriaCorrente: string
-  favorito: boolean = false
+  tipo: string
 
-  public constructor(produtoAbstrato: any = { id: '', nome: '', marca: '', preco: '', desconto: '', img: '', categoria: '', favorito: false}) {
+  public constructor(produtoAbstrato: any = {
+    id: '',
+    nome: '',
+    marca: '',
+    preco: '',
+    desconto: '',
+    img: '',
+    categortia: '',
+    tipo: ''
+
+  }) {
     this.pid = produtoAbstrato.id
     this.nome = produtoAbstrato.nome
     this.marca = produtoAbstrato.marca
@@ -27,11 +37,6 @@ export class Produto implements IProduto {
     this.desconto = produtoAbstrato.desconto
     this.imagemUrl = produtoAbstrato.img
     this.categoriaCorrente = produtoAbstrato.categoria
-    this.favorito = produtoAbstrato.favorito
+    this.tipo = produtoAbstrato.tipo
   }
-}
-export class FactoryProduto extends Produto {
-  categorias: string[];
-  categoriaCorrente: string;
-  foiFavoritado: boolean;
 }

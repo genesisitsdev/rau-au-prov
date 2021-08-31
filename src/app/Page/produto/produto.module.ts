@@ -9,6 +9,7 @@ import { ProdutoPageRoutingModule } from './produto-routing.module';
 import { ProdutoPage } from './produto.page';
 import { ProdutoComponent } from '../../Components/produto/produto.component'
 import { ProdutoDetalheComponent } from 'src/app/Components/produto-detalhe/produto.detalhe.component';
+import { StarRatingComponent } from 'src/app/Components/star-rating/star.rating.component';
 
 @NgModule({
   imports: [
@@ -20,11 +21,13 @@ import { ProdutoDetalheComponent } from 'src/app/Components/produto-detalhe/prod
   declarations: [
     ProdutoPage,
     ProdutoComponent,
-    ProdutoDetalheComponent
+    ProdutoDetalheComponent,
+    StarRatingComponent
   ],
   exports: [
     ProdutoComponent,
-    ProdutoDetalheComponent
+    ProdutoDetalheComponent,
+    StarRatingComponent
   ]
 })
 export class ProdutoPageModule {}

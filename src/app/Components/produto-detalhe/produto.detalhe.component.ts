@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core'
 import { ProdutoDetalhe } from './ProdutoDetalhe';
 
 @Component({
@@ -11,20 +11,23 @@ export class ProdutoDetalheComponent implements OnInit {
 
   @Input() set produto(prod: any) {
     this.produtoComponent = new ProdutoDetalhe(prod)
+    console.log("Produto detalhe: ", this.produtoComponent)
+    this.changeProduto.emit(this.produtoComponent)
   }
+
+  @Output() changeProduto = new EventEmitter<ProdutoDetalhe>()
 
   public produtoComponent: ProdutoDetalhe
-
-  public detalhes: any = {
-    avaliacoes: "3012 Avalições"
-  }
 
   public slideOpts = {
     initialSlide: 1,
     speed: 400
   };
 
-  public ngOnInit() {
+  public ngOnInit() {}
 
+  favoritarProduto(produto: ProdutoDetalhe) {
+    this.produto.togglefavorito()
+    this.changeProduto.emit(produto)
   }
 }

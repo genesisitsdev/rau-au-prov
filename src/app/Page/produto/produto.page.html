@@ -4,8 +4,27 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="produtoPage">
 
-  <produto-detalhe-component [produto]="produto"></produto-detalhe-component>
+  <ion-item-group class="produtoPageSection">
+    <produto-detalhe-component [produto]="produto"></produto-detalhe-component>
+    <ion-item class="produtoPageButton ion-no-padding">
+      <ion-button size="large" expand="block" class="">Comprar</ion-button>
+    </ion-item>
+  </ion-item-group>
+
+  <ion-item-group class="">
+
+    <ion-label>
+      <span>Produtos comprados</span>
+      <ion-button slot="end" fill="clear" href="">Ver todos</ion-button>
+    </ion-label>
+
+    <ion-slides pager="true">
+      <ion-slide class="produtoPageSlider" *ngFor="let produto of produtos">
+        <produto-component [produto]="produto"></produto-component>
+      </ion-slide>
+    </ion-slides>
+  </ion-item-group>
 
 </ion-content>
