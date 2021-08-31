@@ -1,15 +1,16 @@
 <ion-item slot="none" class="produtoComponent ion-no-padding" *ngIf="produtoComponent?.pid" >
 
-  <ion-button fill="clear" slot="start" class="produtoDesconto">
+  <ion-button fill="clear" slot="start" class="produtoDesconto" (click)="selecionarProduto(produtoComponent)">
     <ion-icon slot="start" name="caret-down-sharp"></ion-icon>
     <span>{{ produtoComponent?.desconto | slice:0:-3 }}</span>
   </ion-button>
 
-  <ion-button fill="clear" slot="end" class="produtoFavorito">
-    <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+  <ion-button fill="clear" slot="end" class="produtoFavorito" (click)="favoritarProduto(produtoComponent)">
+    <ion-icon slot="icon-only" name="heart-outline" *ngIf="!produtoComponent.favorito"></ion-icon>
+    <ion-icon slot="icon-only" name="heart-sharp" *ngIf="produtoComponent.favorito"></ion-icon>
   </ion-button>
 
-  <ion-button fill="clear"  class="produtoDescricao">
+  <ion-button fill="clear"  class="produtoDescricao" (click)="selecionarProduto(produtoComponent)">
     <ion-label>
 
       <figure class="produtoImagemUrl">

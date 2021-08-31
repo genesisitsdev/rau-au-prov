@@ -9,7 +9,7 @@
     <ion-row>
       <ion-col class="" offset="0" *ngFor="let produto of produtos" [size]="6">
 
-        <produto-component [produto]="produto" class="produtoLista"></produto-component>
+        <produto-component class="produtoLista" [produto]="produto" (changeProduto)="changeProduto($event)" ></produto-component>
 
       </ion-col>
     </ion-row>
@@ -30,7 +30,7 @@
     <ion-row>
       <ion-col class="" offset="0.2" *ngFor="let produto of produtos" [size]="5.6">
 
-        <component-produto [produto]="produto" class="produtoLista"></component-produto>
+        <produto-component class="produtoLista" [produto]="produto" (changeProduto)="changeProduto($event)"></produto-component>
 
       </ion-col>
     </ion-row>

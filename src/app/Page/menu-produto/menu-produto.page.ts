@@ -59,4 +59,8 @@ export class MenuProdutoPage implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  public changeProduto(produto: any) {
+    console.log("Change Produto: ", produto)
+  }
 }
