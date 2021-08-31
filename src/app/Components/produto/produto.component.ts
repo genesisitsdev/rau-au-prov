@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Produto } from './Produto'
 
 @Component({
-  selector: 'component-produto',
+  selector: 'produto-component',
   templateUrl: './produto.component.html',
   styleUrls: ['./produto.component.scss'],
 })
@@ -22,5 +22,7 @@ export class ProdutoComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
 
 }

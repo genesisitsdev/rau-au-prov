@@ -1,28 +1,37 @@
-<section class="produtoComponente" *ngIf="produtoComponent?.pid">
-  <div class="produtoDesconto">
-      <ion-button fill="clear" class="produtoValorDeDesconto">
-          <ion-icon slot="start" name="caret-down-sharp"></ion-icon>
-          <span>{{ produtoComponent?.desconto | slice:0:-3 }}</span>
-      </ion-button>
-      <button class="produtoFavorito">
-          <ion-icon slot="start" name="heart-outline"></ion-icon>
-      </button>
-  </div>
+<ion-item slot="none" class="produtoComponent ion-no-padding" *ngIf="produtoComponent?.pid" >
 
-  <div class="produtoImagemUrl">
-      <img [src]="produtoComponent?.imagemUrl" />
-  </div>
+  <ion-button fill="clear" slot="start" class="produtoDesconto">
+    <ion-icon slot="start" name="caret-down-sharp"></ion-icon>
+    <span>{{ produtoComponent?.desconto | slice:0:-3 }}</span>
+  </ion-button>
 
-  <div class="produtoDescricao">
-      <p class="produtoNome">{{ produtoComponent?.nome }}</p>
-      <p class="produtoMarca">{{ produtoComponent?.marca}}
-        <span *ngIf="produtoComponent?.categoriaCorrente"> | {{produtoComponent?.categoriaCorrente}}</span>
-      </p>
-  </div>
-  <p class="produtoPreco">
-    <span class="produtoSaudacaoDeDesconto">
-      Aproveite esse desconto
-    </span>
-    <br>
-    {{produtoComponent?.preco }}</p>
-</section>
+  <ion-button fill="clear" slot="end" class="produtoFavorito">
+    <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+  </ion-button>
+
+  <ion-button fill="clear"  class="produtoDescricao">
+    <ion-label>
+
+      <figure class="produtoImagemUrl">
+        <img [src]="produtoComponent?.imagemUrl" />
+      </figure>
+
+      <article class="produtoDetalhe">
+
+        <p>{{ produtoComponent?.nome }}</p>
+
+        <p class="produtoMarca">
+          <span>{{ produtoComponent?.marca}}</span>
+          <span *ngIf="produtoComponent?.categoriaCorrente"> | {{produtoComponent?.categoriaCorrente}}</span>
+        </p>
+
+        <p class="produtoPreco">
+          <span class="produtoSaudacao">Aproveite esse desconto</span>
+          <span>{{produtoComponent?.preco}}</span>
+        </p>
+
+      </article>
+
+    </ion-label>
+  </ion-button>
+</ion-item>
