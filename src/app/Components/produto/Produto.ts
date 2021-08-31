@@ -1,5 +1,3 @@
-import { Preco } from '../../core/Preco';
-
 interface IProduto {
   pid: string;
   nome: string;
@@ -9,12 +7,6 @@ interface IProduto {
   imagemUrl: string;
   categoriaCorrente: string
   favorito: boolean
-}
-
-interface IProdutoDetalhe {
-  carrossel: string[];
-  ranking: string;
-  descricao: string;
 }
 
 export class Produto implements IProduto {
@@ -38,15 +30,8 @@ export class Produto implements IProduto {
     this.favorito = produtoAbstrato.favorito
   }
 }
-
-export class FactoryProduct extends Produto {
+export class FactoryProduto extends Produto {
   categorias: string[];
   categoriaCorrente: string;
   foiFavoritado: boolean;
-}
-
-export class ProdutoDetalhe extends FactoryProduct implements IProdutoDetalhe {
-  carrossel: string[];
-  ranking: string;
-  descricao: string;
 }

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Produto } from '../../Components/produto/Produto'
-
 @Component({
   selector: 'app-produto',
   templateUrl: './produto.page.html',
@@ -8,10 +6,26 @@ import { Produto } from '../../Components/produto/Produto'
 })
 export class ProdutoPage implements OnInit {
 
+  public produto: any = {
+    id:1,
+    nome:'Ração Golden Special Sabor Frango e Carne ',
+    marca:'Premier Pet',
+    tipo:'Golden',
+    preco:'R$ 132,99',
+    desconto: 'R$ 18,00',
+    img:'../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
+    categoria: "Golden",
+    carrossel: [
+      "../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png",
+      "../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png",
+      "../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png",
+      "../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png",
+      "../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png",
+      "../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png"
+    ]
+  }
+
   constructor() {
-    let p = new Produto()
-    p.nome = "teste"
-    console.log("Produto: ", p)
   }
 
   ngOnInit() {
