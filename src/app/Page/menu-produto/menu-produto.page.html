@@ -19,7 +19,7 @@
         <ion-slides pager="true" [options]="slideOpts">
           <ion-slide *ngFor="let baner of baners">
 
-            <component-baner [baner]="baner"></component-baner>
+            <baner-component [baner]="baner" (changeBaner)="changeBaner($event)"></baner-component>
 
           </ion-slide>
         </ion-slides>

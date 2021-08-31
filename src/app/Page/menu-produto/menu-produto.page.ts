@@ -63,4 +63,8 @@ export class MenuProdutoPage implements OnInit {
   public changeProduto(produto: any) {
     console.log("Change Produto: ", produto)
   }
+
+  public changeBaner(baner: any) {
+    console.log("change Baner: ", baner)
+  }
 }
