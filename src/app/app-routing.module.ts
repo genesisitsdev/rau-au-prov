@@ -98,6 +98,10 @@ import { RouterModule } from '@angular/router';
         path: 'subcategoria',
         loadChildren: () => import('./Page/subcategoria/subcategoria.module').then(m => m.SubCategoriaPageModule)
       },
+      {
+        path: 'carrinho',
+        loadChildren: () => import('./Page/carrinho/carrinho.module').then(m => m.CarrinhoPageModule)
+      },
     ])
   ],
   exports: [RouterModule]
