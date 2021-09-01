@@ -6,10 +6,65 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu-produto.page.scss'],
 })
 export class MenuProdutoPage implements OnInit {
+  public produtos: any = [
+    {
+      id: 1,
+      nome: 'Ração Golden Special Sabor Frango e Carne ',
+      marca: 'Premier Pet',
+      tipo: 'Golden',
+      preco: 'R$ 132,99',
+      desconto: 'R$ 18,00',
+      img: '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
+      categoria: 'Golden',
+    },
+    {
+      id: 1,
+      nome: 'Ração Golden Special Sabor Frango e Carne ',
+      marca: 'Premier Pet',
+      tipo: 'Golden',
+      preco: 'R$ 132,99',
+      desconto: 'R$ 18,00',
+      img: '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
+    },
+    {
+      id: 1,
+      nome: 'Ração Golden Special Sabor Frango e Carne ',
+      marca: 'Premier Pet',
+      tipo: 'Golden',
+      preco: 'R$ 132,99',
+      desconto: 'R$ 18,00',
+      img: '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
+    },
+    {
+      id: 1,
+      nome: 'Ração Golden Special Sabor Frango e Carne ',
+      marca: 'Premier Pet',
+      tipo: 'Golden',
+      preco: 'R$ 132,99',
+      desconto: 'R$ 18,00',
+      img: '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
+    },
+  ];
 
-  constructor() { }
+  public baners: any[] = [
+    { id: 'asdas', url: '../../../assets/img/rauau/promo/baner-cao.PNG' },
+    { id: '123', url: '../../../assets/img/rauau/promo/baner-cao.PNG' },
+  ];
 
-  ngOnInit() {
+  public slideOpts: any = {
+    initialSlide: 1,
+    speed: 400,
+  };
+
+  constructor() {}
+
+  ngOnInit() {}
+
+  public changeProduto(produto: any) {
+    console.log("Change Produto: ", produto)
   }
 
+  public changeBaner(baner: any) {
+    console.log("change Baner: ", baner)
+  }
 }
