@@ -11,7 +11,6 @@ export class ProdutoComponent implements OnInit {
 
   @Input() set produto(prod) {
     if(prod) {
-      this.produtoComponent=  new Produto(prod)
       this.produtoComponent=  new Produto(prod);
     }
   }
