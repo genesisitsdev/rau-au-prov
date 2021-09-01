@@ -1,12 +1,14 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar color="dark">
+<!-- <ion-header class="ion-no-border">
+
+  <!--
+    <ion-toolbar color="dark">
     <ion-buttons slot="start">
       <ion-icon color="light" slot="icon-only" name="person-circle-outline" class="icone1x"></ion-icon>
     </ion-buttons>
 
     <ion-title class="ion-text-center" expand="full">
       <ion-buttons>
-        <!-- <ion-icon slot="icon-only" name="basket-outline" class="icone1x" color="light"></ion-icon> -->
+        <!-- <ion-icon slot="icon-only" name="basket-outline" class="icone1x" color="light"></ion-icon> -- >
         <img src="../../assets/img/rauau/LOGO3.png" class="imgToobar">
       </ion-buttons>
     </ion-title>
@@ -24,6 +26,7 @@
 
     </ion-title>
   </ion-toolbar>
+-- >
 
   <ion-toolbar class="ion-text-center" color="dark">
     <ion-button fill="clear" *ngIf="tollbarEndereco">
@@ -43,11 +46,11 @@
       <p class="rauau">RAU<span style="color: #FF0000;">-</span>AU</p>
       <p class="saudacao">Aqui seu pet é mais feliz.</p>
     </ion-title>
-  </ion-toolbar>
+  </ion-toolbar> -- >
 
   <ion-toolbar color="dark">
     <ion-slides [options]="slideOpts">
-      <!-- <ion-slide *ngFor="let options of optionsFranquias"> -->
+      <!-- <ion-slide *ngFor="let options of optionsFranquias"> -- >
 
       <ion-slide class="slideTopo" *ngFor="let imagem of seguimentos">
         <div class="containerImagem ion-trxt-center">
@@ -61,6 +64,7 @@
     </ion-slides>
   </ion-toolbar>
 </ion-header>
+-- >
 
 <ion-toolbar class="ion-text-center" color="dark">
   <ion-button fill="clear" *ngIf="tollbarEndereco">
@@ -74,6 +78,7 @@
     <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
   </ion-button>
 </ion-toolbar>
+-- >
 
 <ion-toolbar color="dark">
   <ion-title class="ion-text-center">
@@ -84,7 +89,7 @@
 
 <ion-toolbar color="dark">
   <ion-slides [options]="slideOpts">
-    <!-- <ion-slide *ngFor="let options of optionsFranquias"> -->
+    <!-- <ion-slide *ngFor="let options of optionsFranquias"> -- >
 
     <ion-slide class="slideTopo" *ngFor="let imagem of seguimentos">
       <div class="containerImagem ion-trxt-center">
@@ -97,62 +102,44 @@
     </ion-slide>
   </ion-slides>
 </ion-toolbar>
+-->
+
+<ion-header>
+  <menu-component></menu-component>
+</ion-header>
 
 <ion-content [fullscreen]="true" class="subContainer">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="small">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div class="subContainer">
 
 
-    <ion-header class="ion-no-border">
-      <ion-slides [pager]="true" [scrollbar]="true" [options]="promoOpts">
-        <!-- <ion-slide *ngFor="let options of optionsFranquias"> -->
-        <ion-slide class="header" *ngFor="let imagem of promo">
-          <img [src]="imagem.img" class="heraderImg" />
-        </ion-slide>
-      </ion-slides>
-    </ion-header>
+  <p class="produtosDescontoTitle ion-text-left">Produtos com Desconto <span class="verTodos">Ver todos</span></p>
 
-    <p class="produtosDescontoTitle ion-text-left">Produtos com Desconto <span class="verTodos">Ver todos</span></p>
+  <ion-slides [options]="ultimoPedidoOpts">
+    <ion-slide class="acertoFlex" *ngFor="let ultimos of CardDesconto" size="12">
 
-    <ion-header class="ion-no-border">
-      <ion-slides [options]="ultimoPedidoOpts">
-        <ion-slide class="acertoFlex" *ngFor="let ultimos of CardDesconto" size="12">
+      <produto-component [produto]="ultimos" class="produtoCard"></produto-component>
 
-          <produto-component [produto]="ultimos" class="produtoCard"></produto-component>
+    </ion-slide>
+  </ion-slides>
 
-        </ion-slide>
-      </ion-slides>
-    </ion-header>
+  <ion-slides [options]="marcasOpts">
+    <ion-slide class="slidesMarcas" *ngFor="let marca of marcas">
+      <figure>
+        <img [src]="marca.img" class="imgMarcas">
+      </figure>
 
-    <ion-header>
-      <ion-slides [options]="marcasOpts">
-        <ion-slide class="slidesMarcas" *ngFor="let marca of marcas">
-          <div>
-            <img [src]="marca.img" class="imgMarcas">
-          </div>
-
-        </ion-slide>
-      </ion-slides>
-    </ion-header>
-
-    <ion-grid>
-      <ion-row>
-        <ion-col class="descontoFixo" offset="0.1" size="5.8" *ngFor="let item of fixo">
-
-          <produto-component [produto]="item" class="produtoLista"></produto-component>\
-
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    </ion-slide>
+  </ion-slides>
 
 
+  <ion-grid>
+    <ion-row>
+      <ion-col class="descontoFixo" offset="0.2" size="5.6" *ngFor="let item of fixo">
+
+        <produto-component [produto]="item" class="produtoLista"></produto-component>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 
-
-  </div>
 </ion-content>
