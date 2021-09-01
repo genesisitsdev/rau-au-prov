@@ -11,7 +11,6 @@ export class ProdutoDetalheComponent implements OnInit {
 
   @Input() set produto(prod: any) {
     this.produtoComponent = new ProdutoDetalhe(prod)
-    console.log("Produto detalhe: ", this.produtoComponent)
     this.changeProduto.emit(this.produtoComponent)
   }
 
@@ -27,7 +26,14 @@ export class ProdutoDetalheComponent implements OnInit {
   public ngOnInit() {}
 
   favoritarProduto(produto: ProdutoDetalhe) {
-    this.produto.togglefavorito()
+    produto.toggleFavorito()
     this.changeProduto.emit(produto)
+    console.log("Produto favorito: ", produto)
   }
+
+  addCarrinho(produto: ProdutoDetalhe) {
+    this.changeProduto.emit(produto)
+    console.log("Produto ADD carrinho: ", produto)
+  }
+
 }

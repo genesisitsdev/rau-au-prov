@@ -7,6 +7,7 @@ interface IProdutoDetalhe {
   numeroDeAvaliacoes: number
   tipoDeFrete: string
   valorDoFrete: number
+  toggleFavorito()
 }
 
 export class ProdutoDetalhe extends FactoryProduto implements IProdutoDetalhe{

@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { ProdutoDetalhe } from 'src/app/Components/produto-detalhe/ProdutoDetalhe';
 @Component({
   selector: 'app-produto',
   templateUrl: './produto.page.html',
   styleUrls: ['./produto.page.scss'],
 })
 export class ProdutoPage implements OnInit {
+
+  produtoComponent: any;
+
   public produto: any = {
     id: 1,
     nome: 'Ração Golden Special Sabor Frango e Carne ',
@@ -69,9 +73,15 @@ export class ProdutoPage implements OnInit {
     },
   ];
 
-  produtoComponent: any;
-
   constructor() {}
 
   ngOnInit() {}
+
+  public changeProdutoDetalhe(produto: ProdutoDetalhe) {
+    this.produtoComponent = produto
+  }
+
+  public comprarProduto(produto: ProdutoDetalhe) {
+    console.log("Comprar Produto: ", produto)
+  }
 }

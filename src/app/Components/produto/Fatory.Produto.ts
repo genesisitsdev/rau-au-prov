@@ -4,9 +4,10 @@ interface IFactoryProduto {
   categorias: string[];
   favorito: boolean;
   descricao: string;
+  toggleFavorito()
 }
 
-export class FactoryProduto extends Produto {
+export class FactoryProduto extends Produto implements IFactoryProduto{
 
   categorias: string[];
   favorito: boolean = false;

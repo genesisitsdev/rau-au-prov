@@ -44,12 +44,13 @@
 
     <ion-item slot="start" class="ion-no-padding">
 
-      <ion-button fill="outline" class="produtoDetalhePrecoButton" >
-        <ion-icon name="heart-outline"></ion-icon>
+      <ion-button fill="outline" class="produtoDetalhePrecoButton" (click)="favoritarProduto(produtoComponent)">
+        <ion-icon slot="icon-only" name="heart-outline" *ngIf="!produtoComponent.favorito"></ion-icon>
+        <ion-icon slot="icon-only" name="heart-sharp" *ngIf="produtoComponent.favorito"></ion-icon>
       </ion-button>
 
-      <ion-button fill="outline" class="produtoDetalhePrecoButton">
-        <ion-icon src="../../../assets/icon/rau-au/icon-casa-dog.svg" ></ion-icon>
+      <ion-button fill="outline" class="produtoDetalhePrecoButton" (click)="addCarrinho(produtoComponent)">
+        <ion-icon src="../../../assets/icon/rau-au/icon-casa-dog.svg"></ion-icon>
       </ion-button>
 
     </ion-item>

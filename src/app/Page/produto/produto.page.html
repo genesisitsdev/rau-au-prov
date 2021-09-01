@@ -7,10 +7,13 @@
 <ion-content class="produtoPage">
 
   <ion-item-group class="produtoPageSection">
-    <produto-detalhe-component [produto]="produto"></produto-detalhe-component>
-    <ion-item class="produtoPageButton ion-no-padding">
+
+    <produto-detalhe-component [produto]="produto" (changeProduto)="changeProdutoDetalhe($event)"></produto-detalhe-component>
+
+    <ion-item class="produtoPageButton ion-no-padding" (click)="comprarProduto(produtoComponent)">
       <ion-button size="large" expand="block" class="">Comprar</ion-button>
     </ion-item>
+
   </ion-item-group>
 
   <ion-item-group class="">
