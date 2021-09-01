@@ -1,9 +1,9 @@
 <app-nav-bar [title]="categoria"></app-nav-bar>
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let pet of petsList">
+    <ion-item [routerLink]="['/subcategoria', { idSubCategoria: pet.id }]" *ngFor="let pet of petsList">
       <ion-label>{{pet.name}}</ion-label>
-      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+        <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
     </ion-item>
   </ion-list>
 </ion-content>

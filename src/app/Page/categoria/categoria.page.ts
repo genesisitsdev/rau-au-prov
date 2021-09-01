@@ -41,7 +41,7 @@ export class CategoriaPage implements OnInit {
   }
 
   ngOnInit() {
-    const id = Number(this.route.snapshot.paramMap.get('idCategoria'));
+    const id = +this.route.snapshot.paramMap.get('idCategoria');
     this.categoria = this.categoriasList[id];
     console.log('categoria: ', this.categoria);
   }

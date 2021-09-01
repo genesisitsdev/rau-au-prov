@@ -95,6 +95,10 @@ import { RouterModule } from '@angular/router';
         path: 'categoria',
         loadChildren: () => import('./Page/categoria/categoria.module').then(m => m.CategoriaPageModule)
       },
+      {
+        path: 'subcategoria',
+        loadChildren: () => import('./Page/subcategoria/subcategoria.module').then(m => m.SubCategoriaPageModule)
+      },
     ])
   ],
   exports: [RouterModule]
