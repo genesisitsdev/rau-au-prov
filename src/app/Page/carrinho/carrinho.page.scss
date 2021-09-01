@@ -1,0 +1,93 @@
+ion-content {
+  font-family: 'Open Sans Bold';
+}
+
+ion-list{
+  font-family: 'Open Sans Bold';
+  display: flex;
+  flex-direction: column;
+
+  ion-item {
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;    
+  }
+}
+
+.boxQuantidade {
+  display: flex;
+  flex-direction: column;
+}
+
+.parcelas {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Open Sans Bold';
+  color: #848484;  
+}
+
+.left {
+  float: left;
+}
+
+.preco {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Open Sans Bold';
+  color: #5555D9;
+}
+
+div.imagemProduto {
+  width: 80px;
+  height: 150px;
+}
+
+div.detalhesProduto {
+  
+}
+
+.boxEndereco {
+  margin-top: 8px;
+  margin-bottom: 0;
+  margin-left: 15px;
+  padding: 0;
+  margin-right: 14px;
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 12px;
+
+  p:first-child {
+    color: #5b5050;
+    font-size: 14px;      
+  }
+
+  p {
+    padding: 0;
+    margin: 0; 
+  }
+}
+
+.descEndereco {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Open Sans Light';
+  color: #848484 !important;    
+  text-transform: uppercase;
+}
+
+.frete {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 400;
+  color: #848484;  
+}
+
+.prazoFrete {
+  margin-right: 198px !important;  
+}
+
+.boxTotal {
+  p {
+    display: inline-block;
+  }
+}

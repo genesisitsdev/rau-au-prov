@@ -1,0 +1,34 @@
+<app-nav-bar title="Carrinho"></app-nav-bar>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let produto of produtos">
+      <div class="imagemProduto">
+        <ion-img [src]="produto.imagem"></ion-img>
+      </div>
+      <div class="detalhesProduto">
+        <h2>{{produto.nome}}</h2>
+        <div class="boxQuantidade">
+          <ion-button fill="clear" (click)="remover(produto)">
+            <ion-icon name="remove-circle" color="primary"></ion-icon>
+          </ion-button>
+          <ion-input placeholder="Enter Input" value="{{produto.quantidade}}"></ion-input>
+          <ion-button fill="clear" (click)="adicionar(produto)">
+            <ion-icon name="add-circle" color="primary"></ion-icon>
+          </ion-button>
+        </div>
+        <ion-label class="preco">R$ {{produto.preco | currency}}</ion-label>
+        <ion-label class="parcelas">6x R$ {{(produto.preco/6).toFixed(2)}}</ion-label>
+      </div>
+    </ion-item>
+  </ion-list>
+  <div class="boxEndereco">
+    <p class="titEndereco">Endereço<p>
+    <p class="descEndereco">Rua José da Silva, 53 | 22123-615</p>
+    <p class="frete prazoFrete">Receber até 26/08</p>
+    <p class="frete">R$ 14,58</p>
+  </div>
+  <div class="boxTotal">
+    <p>Total</p>
+    <p>{{precoTotal}}</p>
+  </div>
+</ion-content>
