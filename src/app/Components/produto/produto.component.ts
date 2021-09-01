@@ -12,6 +12,7 @@ export class ProdutoComponent implements OnInit {
   @Input() set produto(prod) {
     if(prod) {
       this.produtoComponent=  new Produto(prod)
+      this.produtoComponent=  new Produto(prod);
     }
   }
 
@@ -26,14 +27,14 @@ export class ProdutoComponent implements OnInit {
   }
 
   public selecionarProduto(produto: Produto) {
-    this.changeProduto.emit(produto)
+    this.changeProduto.emit(produto);
     //console.log("Select Produto: ", produto)
   }
 
   public favoritarProduto(produto: Produto) {
     produto.favorito = !produto.favorito
-    this.changeProduto.emit(produto)
-    //console.log("Favoritar Produto: ", produto)
+    this.changeProduto.emit(produto);
+    console.log('Favoritar Produto: ', produto);
   }
 
 }
