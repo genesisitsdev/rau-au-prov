@@ -1,0 +1,17 @@
+.menuCategoriasComponent {
+  ion-icon {
+    font-size: 24px;
+  }
+
+  .logoAnimal {
+    font-size: 50px;
+  }
+
+  ion-slide {
+    max-width: calc(100% / 3);
+    .cardContainer{
+      padding: 0;
+      margin: 0 auto;
+    }
+  }
+}

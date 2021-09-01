@@ -131,6 +131,13 @@ export class HomePage implements OnInit {
     },
   ];
 
+  public categorias: any[] = [
+    { name: "cachorros", url: "../../../assets/img/rauau/icons/rau-au-cachoro.svg"},
+    { name: "gatos", url: "../../../assets/img/rauau/icons/rau-au-gato.svg"},
+    { name: "pássaros", url: "../../../assets/img/rauau/icons/rau-au-passaro.svg"},
+    { name: "pássaros", url: "../../../assets/img/rauau/icons/rau-au-passaro.svg"}
+  ]
+
   constructor(
     private geoLocation: GeolocalizacaoService,
     private auth: AuthService,
@@ -231,5 +238,13 @@ export class HomePage implements OnInit {
 
   navigarParaCategoria(idCategoria: any) {
     this.router.navigate(['/categoria', { idCategoria }]);
+  }
+
+  changeCategoria(categoria: any) {
+    console.log("change categoria", categoria)
+  }
+
+  changeMenu(menu: any) {
+    console.log("Change Menu: ", menu)
   }
 }

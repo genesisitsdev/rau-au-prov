@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
 
 
 @Component({
@@ -29,7 +29,6 @@ export class MenuComponent implements OnInit {
 
   accessMenu(menu: any) {
     this.changeMenu.emit(menu)
-    console.log("Access menu: ", menu)
   }
 
 }

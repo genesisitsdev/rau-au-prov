@@ -1,0 +1,39 @@
+<ion-toolbar color="dark" class="menuCategoriasComponent">
+
+  <ion-toolbar color="dark">
+    <ion-title>
+      <ion-icon src="../../../assets/img/rauau/icons/rau-au-pin.svg"></ion-icon>
+      <ion-text>Rua Antino Galdino</ion-text>
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar color="dark">
+    <ion-title>
+      <ion-text>RAU<span>-</span>AU</ion-text>
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar color="dark">
+    <ion-title>
+      <ion-text>Aqui seu Pet é mais feliz</ion-text>
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar color="dark">
+
+    <ion-slides [options]="slideOptions">
+      <ion-slide *ngFor="let categoria of categoriasComponent" class="ion-no-padding" (click)="changeCategoria(categoria)">
+
+        <ion-card color="dark" class="cardContainer">
+          <ion-card-header>
+            <ion-icon class="logoAnimal" src="{{categoria.url}}"></ion-icon>
+          </ion-card-header>
+          <ion-card-content>{{categoria.name}}</ion-card-content>
+        </ion-card>
+
+      </ion-slide>
+    </ion-slides>
+
+  </ion-toolbar>
+
+</ion-toolbar>

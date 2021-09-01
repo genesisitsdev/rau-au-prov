@@ -105,7 +105,8 @@
 -->
 
 <ion-header>
-  <menu-component></menu-component>
+  <menu-component (changeMenu)="changeMenu($event)"></menu-component>
+  <menu-categorias-component [categorias]="categorias" (changeMenu)="changeCategoria($event)"></menu-categorias-component>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="subContainer">

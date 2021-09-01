@@ -7,6 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { ProdutoComponent } from '../Components/produto/produto.component'
 import { MenuComponent } from '../Components/menu/menu.component'
+import { MenuCategoriasComponent } from '../Components/menu-categorias/menu.categorias.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -17,10 +18,13 @@ import { MenuComponent } from '../Components/menu/menu.component'
   declarations: [
     HomePage,
     ProdutoComponent,
-    MenuComponent],
+    MenuComponent,
+    MenuCategoriasComponent
+  ],
   exports: [
     ProdutoComponent,
-    MenuComponent
+    MenuComponent,
+    MenuCategoriasComponent
   ]
 })
 export class HomePageModule {}
