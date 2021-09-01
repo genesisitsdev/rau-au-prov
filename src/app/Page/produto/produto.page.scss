@@ -1,0 +1,27 @@
+.produtoPage {
+
+  background-color: #e9e9f0;
+  --background: #e9e9f0;
+
+  .produtoPageSection {
+    --background: #FFFFFF;
+    background-color: #FFFFFF;
+  }
+
+  .produtoPageButton {
+    --border-style: none;
+    margin-top: 32px;
+
+    > * {
+      width: 90%;
+      margin: auto;
+      --background: #3aacd1;
+      margin-bottom: 32px;
+    }
+  }
+
+  .produtoPageSlider {
+    width: 90% !important;
+    margin: 5%;
+  }
+}
