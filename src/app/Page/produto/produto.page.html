@@ -25,7 +25,7 @@
 
     <ion-slides pager="true">
       <ion-slide class="produtoPageSlider" *ngFor="let produto of produtos">
-        <produto-component [produto]="produto"></produto-component>
+        <produto-component [produto]="produto" (changeProduto)="changeProdutoComprado($event)"></produto-component>
       </ion-slide>
     </ion-slides>
   </ion-item-group>
