@@ -272,17 +272,13 @@ ion-content {
   }
 
   .descontoFixo {
-    // width: 100%;
     height: 275px;
     background: #ffffff;
     display: flex;
-    margin-right: 10px;
-    // align-items: left;
     flex-direction: column;
     justify-content:space-between;
-    // align-items: center;
     -webkit-border-radius: 7px !important;
     -moz-border-radius: 7px !important;
     border-radius: 7px !important;
+    margin-bottom: 8px  !important;
   }
-

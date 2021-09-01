@@ -1,0 +1,23 @@
+.menuCategoriasComponent {
+  ion-icon {
+    font-size: 24px;
+  }
+
+  .logoAnimal {
+    font-size: 50px;
+  }
+
+  .hifen {
+    color: #FF0000;
+    font-weight: bold;
+  }
+
+  ion-slide {
+    max-width: calc(100% / 3);
+    border-right: solid 1px rgba(58,172,209,0.5) !important;
+    .cardContainer{
+      padding: 0;
+      margin: 0 auto;
+    }
+  }
+}
