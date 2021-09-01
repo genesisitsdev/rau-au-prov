@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoDetalhe } from 'src/app/Components/produto-detalhe/ProdutoDetalhe';
+import { Produto } from 'src/app/Components/produto/Produto';
 @Component({
   selector: 'app-produto',
   templateUrl: './produto.page.html',
@@ -79,6 +80,10 @@ export class ProdutoPage implements OnInit {
 
   public changeProdutoDetalhe(produto: ProdutoDetalhe) {
     this.produtoComponent = produto
+  }
+
+  public changeProdutoComprado(produto: Produto) {
+    console.log("Produto Conprado: ", produto)
   }
 
   public comprarProduto(produto: ProdutoDetalhe) {
