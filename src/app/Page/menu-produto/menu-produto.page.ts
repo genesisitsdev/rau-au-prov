@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FactoryProduto } from 'src/app/Components/produto/Fatory.Produto';
 
 @Component({
   selector: 'app-menu-produto',
@@ -6,45 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu-produto.page.scss'],
 })
 export class MenuProdutoPage implements OnInit {
-  public produtos: any = [
-    {
-      id: 1,
-      nome: 'Ração Golden Special Sabor Frango e Carne ',
-      marca: 'Premier Pet',
-      tipo: 'Golden',
-      preco: 'R$ 132,99',
-      desconto: 'R$ 18,00',
-      img: '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-      categoria: 'Golden',
-    },
-    {
-      id: 1,
-      nome: 'Ração Golden Special Sabor Frango e Carne ',
-      marca: 'Premier Pet',
-      tipo: 'Golden',
-      preco: 'R$ 132,99',
-      desconto: 'R$ 18,00',
-      img: '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-    },
-    {
-      id: 1,
-      nome: 'Ração Golden Special Sabor Frango e Carne ',
-      marca: 'Premier Pet',
-      tipo: 'Golden',
-      preco: 'R$ 132,99',
-      desconto: 'R$ 18,00',
-      img: '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-    },
-    {
-      id: 1,
-      nome: 'Ração Golden Special Sabor Frango e Carne ',
-      marca: 'Premier Pet',
-      tipo: 'Golden',
-      preco: 'R$ 132,99',
-      desconto: 'R$ 18,00',
-      img: '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-    },
-  ];
+  public produtos: FactoryProduto[] = []
 
   public baners: any[] = [
     { id: 'asdas', url: '../../../assets/img/rauau/promo/baner-cao.PNG' },
@@ -56,7 +19,15 @@ export class MenuProdutoPage implements OnInit {
     speed: 400,
   };
 
-  constructor() {}
+  constructor() {
+    let prod = new FactoryProduto
+    prod.mock()
+
+    this.produtos.push(prod)
+    this.produtos.push(prod)
+    this.produtos.push(prod)
+    this.produtos.push(prod)
+  }
 
   ngOnInit() {}
 

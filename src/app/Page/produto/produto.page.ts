@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoDetalhe } from 'src/app/Components/produto-detalhe/ProdutoDetalhe';
+import { FactoryProduto } from 'src/app/Components/produto/Fatory.Produto';
 import { Produto } from 'src/app/Components/produto/Produto';
 @Component({
   selector: 'app-produto',
@@ -10,71 +11,20 @@ export class ProdutoPage implements OnInit {
 
   produtoComponent: any;
 
-  public produto: any = {
-    id: 1,
-    nome: 'Ração Golden Special Sabor Frango e Carne ',
-    marca: 'Premier Pet',
-    tipo: 'Golden',
-    preco: 'R$ 132,99',
-    desconto: 'R$ 18,00',
-    img: '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-    categoria: 'Golden',
-    carrossel: [
-      '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-      '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-      '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-      '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-      '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-      '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-    ],
-    tipoDeFrete: 'Grátis',
-    ranking: 1,
-    favorito: false,
-    satisfacao: 2,
-    avaliacoes: 2000,
+  public produto: ProdutoDetalhe
+
+  public produtos: FactoryProduto[] = []
+
+  constructor() {
+    this.produto = new ProdutoDetalhe
+    this.produto.mockDetahle()
+
+    let prod = new FactoryProduto
+    prod.mock()
+    this.produtos.push(prod)
+    this.produtos.push(prod)
+    this.produtos.push(prod)
   }
-
-  public produtos: any = [
-    {
-      id: 1,
-      nome: 'Ração Golden Special Sabor Frango e Carne ',
-      marca: 'Premier Pet',
-      tipo: 'Golden',
-      preco: 'R$ 132,99',
-      desconto: 'R$ 18,00',
-      img: '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-      categoria: 'Golden',
-    },
-    {
-      id: 1,
-      nome: 'Ração Golden Special Sabor Frango e Carne ',
-      marca: 'Premier Pet',
-      tipo: 'Golden',
-      preco: 'R$ 132,99',
-      desconto: 'R$ 18,00',
-      img: '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-    },
-    {
-      id: 1,
-      nome: 'Ração Golden Special Sabor Frango e Carne ',
-      marca: 'Premier Pet',
-      tipo: 'Golden',
-      preco: 'R$ 132,99',
-      desconto: 'R$ 18,00',
-      img: '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-    },
-    {
-      id: 1,
-      nome: 'Ração Golden Special Sabor Frango e Carne ',
-      marca: 'Premier Pet',
-      tipo: 'Golden',
-      preco: 'R$ 132,99',
-      desconto: 'R$ 18,00',
-      img: '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-    },
-  ];
-
-  constructor() {}
 
   ngOnInit() {}
 

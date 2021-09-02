@@ -9,9 +9,9 @@ import { FactoryProduto as Produto } from './Fatory.Produto'
 
 export class ProdutoComponent implements OnInit {
 
-  @Input() set produto(prod) {
+  @Input() set produto(prod: Produto) {
     if(prod) {
-      this.produtoComponent=  new Produto(prod);
+      this.produtoComponent = prod
     }
   }
 

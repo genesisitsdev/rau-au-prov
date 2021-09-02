@@ -9,8 +9,8 @@ import { ProdutoDetalhe } from './ProdutoDetalhe';
 
 export class ProdutoDetalheComponent implements OnInit {
 
-  @Input() set produto(prod: any) {
-    this.produtoComponent = new ProdutoDetalhe(prod)
+  @Input() set produto(prod: ProdutoDetalhe) {
+    this.produtoComponent = prod
     this.changeProduto.emit(this.produtoComponent)
   }
 

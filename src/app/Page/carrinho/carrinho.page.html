@@ -1,7 +1,7 @@
 <app-nav-bar title="Carrinho"></app-nav-bar>
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let produto of produtos">
+    <!-- <ion-item *ngFor="let produto of produtos">
       <div class="imagemProduto">
         <ion-img [src]="produto.imagem"></ion-img>
       </div>
@@ -19,7 +19,8 @@
         <ion-label class="preco">R$ {{produto.preco | currency}}</ion-label>
         <ion-label class="parcelas">6x R$ {{(produto.preco/6).toFixed(2)}}</ion-label>
       </div>
-    </ion-item>
+    </ion-item> -->
+    <produto-detalhe-component [produto]="produto"></produto-detalhe-component>
   </ion-list>
   <div class="boxEndereco">
     <p class="titEndereco">Endereço<p>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { ProdutoDetalhe } from 'src/app/Components/produto-detalhe/ProdutoDetalhe';
 
 export interface Produto {
   id: number;
@@ -15,6 +16,9 @@ export interface Produto {
   styleUrls: ['./carrinho.page.scss']
 })
 export class CarrinhoPage implements OnInit {
+
+  public produto: ProdutoDetalhe
+
   public precoTotal = 0;
   public produtos: Produto[] = [
     {
@@ -34,6 +38,9 @@ export class CarrinhoPage implements OnInit {
   ];
 
   constructor(private route: ActivatedRoute, private alertCtrl: AlertController) {
+    let prod = new ProdutoDetalhe
+    prod.mockDetahle()
+    this.produto = prod
   }
 
   ngOnInit() {

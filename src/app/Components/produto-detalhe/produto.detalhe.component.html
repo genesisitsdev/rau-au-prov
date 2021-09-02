@@ -11,7 +11,7 @@
 
   <ion-item class="produtoDetalheMarca">
     <ion-label>
-      {{produtoComponent.marca}} | {{produtoComponent.tipo}}
+      {{produtoComponent?.marca}} | {{produtoComponent?.tipo}}
     </ion-label>
   </ion-item>
 
@@ -25,8 +25,8 @@
   <ion-item class="produtoDetalheRanking">
     <ion-icon src="../../../assets/icon/rau-au/medal-dog.svg"></ion-icon>
     <ion-label>
-      {{produtoComponent.posicaoNoRanking}} no ranking na categoria
-      <span><b style="color: #3aacd1 ">{{produtoComponent.categoriaCorrente}}</b></span>
+      {{produtoComponent?.posicaoNoRanking}} no ranking na categoria
+      <span><b style="color: #3aacd1 ">{{produtoComponent?.categoriaCorrente}}</b></span>
     </ion-label>
   </ion-item>
 
@@ -34,10 +34,10 @@
 
     <ion-item class="ion-no-padding" slot="start">
       <ion-label>
-        <span class="produtoDetalhePreco">{{produtoComponent.preco}}</span>
+        <span class="produtoDetalhePreco">{{produtoComponent?.preco}}</span>
         <span class="produtoDetalheFrete">
           <ion-icon src="../../../assets/icon/rau-au/car-dog.svg"></ion-icon>
-          Frete {{produtoComponent.tipoDeFrete}}
+          Frete {{produtoComponent?.tipoDeFrete}}
         </span>
       </ion-label>
     </ion-item>
@@ -45,8 +45,8 @@
     <ion-item slot="start" class="ion-no-padding">
 
       <ion-button fill="outline" class="produtoDetalhePrecoButton" (click)="favoritarProduto(produtoComponent)">
-        <ion-icon slot="icon-only" name="heart-outline" *ngIf="!produtoComponent.favorito"></ion-icon>
-        <ion-icon slot="icon-only" name="heart-sharp" *ngIf="produtoComponent.favorito"></ion-icon>
+        <ion-icon slot="icon-only" name="heart-outline" *ngIf="!produtoComponent?.favorito"></ion-icon>
+        <ion-icon slot="icon-only" name="heart-sharp" *ngIf="produtoComponent?.favorito"></ion-icon>
       </ion-button>
 
       <ion-button fill="outline" class="produtoDetalhePrecoButton" (click)="addCarrinho(produtoComponent)">
