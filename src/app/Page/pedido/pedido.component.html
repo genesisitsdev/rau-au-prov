@@ -1,6 +1,6 @@
 
-<app-nav-bar title="categoria"></app-nav-bar>
-<ion-content class="meioDePagamento">
+<app-nav-bar [title]="title"></app-nav-bar>
+<ion-content class="pedido">
   <ion-list>
 
     <produto-resumo-component [produto]="produto" [carrinho]="carrinho" (changeProduto)="changeProduto($event)"></produto-resumo-component>

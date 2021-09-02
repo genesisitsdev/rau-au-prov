@@ -39,4 +39,7 @@ export class Produto implements IProduto {
     this.img = produtoAbstrato.img
     this.categoria = produtoAbstrato.categoria
   }
+
+  private load() {
+  }
 }

@@ -10,10 +10,10 @@ import { CarrinhoDeCompra } from 'src/app/core/CarrainhoDeCompra';
 })
 
 export class PedidoComponent implements OnInit {
+  public title: string = "Pedido"
 
   public produto: ProdutoDetalhe;
   public carrinho: CarrinhoDeCompra
-  public categoria: string = "Pedido"
 
   constructor(private router: Router, private route: ActivatedRoute) {
 
@@ -26,10 +26,11 @@ export class PedidoComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.title = "Pedido"
   }
 
   changeProduto(produto: ProdutoDetalhe) {
-    this.carrinho.totalizacao()
+    //this.carrinho.totalizacao()
     console.log("Pedido: ", produto)
   }
 

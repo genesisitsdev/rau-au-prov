@@ -3,7 +3,7 @@
 
   <ion-button fill="clear" slot="start" class="produtoDesconto" (click)="selecionarProduto(produtoComponent)">
     <ion-icon slot="start" name="caret-down-sharp"></ion-icon>
-    <span>{{produtoComponent?.desconto}}</span>
+    <span>R$ {{produtoComponent?.desconto}}</span>
   </ion-button>
 
   <ion-button fill="clear" slot="end" class="produtoFavorito" (click)="favoritarProduto(produtoComponent)">

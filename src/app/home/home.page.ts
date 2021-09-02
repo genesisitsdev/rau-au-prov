@@ -99,8 +99,8 @@ export class HomePage implements OnInit {
   }
 
   changeProduto(produto: Produto) {
-    this.router.navigateByUrl('/produto', { state: produto})
-    console.log("Change Produto: ", produto)
+    //this.router.navigateByUrl('/produto', { state: produto})
+    console.log("Home/Change Produto: ", produto)
   }
 
   enderecoPrincipal() {
