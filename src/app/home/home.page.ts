@@ -14,6 +14,8 @@ import { MarcasMockService } from '../Services/mock/marcas.mock.service';
 import { ProdutoMockService } from '../Services/mock/produto.mock.service';
 //########################################################################################################
 
+
+import { Categoria } from '../core/Categoria'
 import { FactoryProduto as Produto } from '../Components/produto/Fatory.Produto';
 
 
@@ -50,14 +52,14 @@ export class HomePage implements OnInit {
     private router: Router
   ) {
 
-    let cat = new CategoriasMockService
-    this.categorias = cat.get()
+    this.categorias = CategoriasMockService.get().map((cat: Categoria)=> {
+      return new Categoria(cat)
+    })
 
     let seg = new SegmentosMockService
     this.seguimentos = seg.get()
 
-    let prom = new PromoMockService
-    this.promo = prom.get()
+    this.promo = PromoMockService.get()
 
     let promocard = new PromoCardMockService
     this.promoCard = promocard.get()
@@ -79,6 +81,26 @@ export class HomePage implements OnInit {
     this.dadosUsuario();
     this.getFranquias();
     this.pathImagem = 'assets/img/logo/';
+  }
+
+  navigarParaCategoria(idCategoria: any) {
+    this.router.navigate(['/categoria', { idCategoria }]);
+  }
+
+  changeCategoria(categoria: any) {
+    //this.router.navigate(['/categoria', { categoria }]);
+    this.router.navigateByUrl('/categoria', { state: categoria})
+    console.log("change categoria", categoria)
+  }
+
+  changeMenu(menu: any) {
+    //this.router.navigateByUrl('/menu', { state: menu})
+    console.log("Change Menu: ", menu)
+  }
+
+  changeProduto(produto: Produto) {
+    this.router.navigateByUrl('/produto', { state: produto})
+    console.log("Change Produto: ", produto)
   }
 
   enderecoPrincipal() {
@@ -165,22 +187,5 @@ export class HomePage implements OnInit {
     // console.log('dados Usuário ', this.usuario);
   }
 
-  navigarParaCategoria(idCategoria: any) {
-    this.router.navigate(['/categoria', { idCategoria }]);
-  }
 
-  changeCategoria(categoria: any) {
-    this.router.navigate(['/categoria', { categoria }]);
-    console.log("change categoria", categoria)
-  }
-
-  changeMenu(menu: any) {
-    //this.router.navigate(['/menu', { menu }]);
-    console.log("Change Menu: ", menu)
-  }
-
-  changeProduto(produto: Produto) {
-    this.router.navigate(['/produto', { produto }]);
-    console.log("Change Produto: ", produto)
-  }
 }

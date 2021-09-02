@@ -1,51 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { CategoriaPage, Pets } from '../categoria/categoria.page';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Racao } from '../../core/Racao'
 
-export interface TiposRacao {
-  id: number;
-  name: string;
-}
-
+import { RacaoListMockService } from 'src/app/Services/mock/racao.list.mock.service';
 @Component({
   templateUrl: './subcategoria.page.html',
   styleUrls: ['./subcategoria.page.scss']
 })
 export class SubCategoriaPage implements OnInit {
-  public subcategoria: string;
-  public tiposRacao: TiposRacao[] = [
-    {
-      id: 1,
-      name: 'Ração Seca'
-    },
-    {
-      id: 2,
-      name: 'Ração Úmida'
-    },
-    {
-      id: 3,
-      name: 'Ração Prescrita'
-    },
-    {
-      id: 4,
-      name: 'Ração Natural'
-    },
-    {
-      id: 5,
-      name: 'Ver Todos'
-    },
-  ];
+  public title: string
+  public subcategoria: any;
 
-  constructor(private route: ActivatedRoute) {
+  public tiposRacao: any[] = [];
+
+  constructor(private router: Router, private route: ActivatedRoute) {
+    this.tiposRacao = RacaoListMockService.get().map((racao: any)=> {
+      return new Racao(racao)
+    })
   }
 
   ngOnInit() {
-    //only for development
-    const petsList: Pets[] = new CategoriaPage(this.route).petsList;
-    console.log('petsList: ', petsList);
-    const id = +this.route.snapshot.paramMap.get('idSubCategoria');
-    console.log('id: ', id);
-    this.subcategoria = petsList[id-1].name;
-    console.log('subcategoria: ', this.subcategoria);
+
+    this.subcategoria = this.router.getCurrentNavigation().extras.state
+    this.title = this.subcategoria.nome
+
+  }
+
+  changeSubcategria(racao: Racao) {
+    this.router.navigateByUrl('/menu-produto', { state: racao})
+    console.log(" tipos de racao: ", racao)
   }
 }

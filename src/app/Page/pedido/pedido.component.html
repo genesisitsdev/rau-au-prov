@@ -1,3 +1,25 @@
-<p>
-  pedido works!
-</p>
+
+<app-nav-bar title="categoria"></app-nav-bar>
+<ion-content class="meioDePagamento">
+  <ion-list>
+
+    <produto-resumo-component [produto]="produto" [carrinho]="carrinho" (changeProduto)="changeProduto($event)"></produto-resumo-component>
+
+  </ion-list>
+
+  <div class="boxEndereco">
+    <p class="titEndereco">Endereço
+    <p>
+    <p class="descEndereco">Rua José da Silva, 53 | 22123-615</p>
+    <p class="frete prazoFrete">Receber até 26/08</p>
+    <p class="frete">R$ {{produto.valorDoFrete}}</p>
+  </div>
+
+  <carrinho-resumo-component [carrinho]="carrinho"></carrinho-resumo-component>
+
+  <ion-item class="boxComprar">
+    <ion-button slot="start"  size="large" (click)="checkout(carrinho)">Fechar Comprar</ion-button>
+  </ion-item>
+
+
+</ion-content>

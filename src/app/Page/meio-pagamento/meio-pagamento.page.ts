@@ -32,7 +32,7 @@ export class MeioPagamentoPage implements OnInit {
   }
 
   public checkout(carrinho: CarrinhoDeCompra) {
-    this.router.navigate(['/pagamento', { carrinho }]);
+    this.router.navigate(['/pedido', { carrinho }]);
     console.log("Carrinho: ", carrinho)
   }
 

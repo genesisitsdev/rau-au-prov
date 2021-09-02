@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProdutoDetalhe } from 'src/app/Components/produto-detalhe/ProdutoDetalhe';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ProdutoDetalhe } from 'src/app/Components/produto-detalhe/ProdutoDetalhe';
 import { FactoryProduto as Produto } from 'src/app/Components/produto/Fatory.Produto';
 
 @Component({
@@ -9,11 +9,11 @@ import { FactoryProduto as Produto } from 'src/app/Components/produto/Fatory.Pro
   styleUrls: ['./produto.page.scss'],
 })
 export class ProdutoPage implements OnInit {
-
+  public title: string = "Produto"
   produtoComponent: any;
   categoria: string
 
-  public produto: ProdutoDetalhe
+  public produto: any
 
   public produtos: Produto[] = []
 
@@ -21,7 +21,6 @@ export class ProdutoPage implements OnInit {
 
     this.produto = new ProdutoDetalhe
     this.produto.mockDetahle()
-
     let prod = new Produto
     prod.mock()
     this.produtos.push(prod)
@@ -31,8 +30,9 @@ export class ProdutoPage implements OnInit {
   }
 
   ngOnInit() {
-    this.categoria = this.route.snapshot.paramMap.get('idSubCategoria');
-    console.log('Menu Produto/subcategoria: ', this.categoria);
+    let produto = this.router.getCurrentNavigation().extras.state
+    this.produto = new ProdutoDetalhe(JSON.parse(JSON.stringify(produto)))
+    console.log('Produto INIT: ', this.produto)
   }
 
   public changeProdutoDetalhe(produto: ProdutoDetalhe) {
@@ -46,7 +46,7 @@ export class ProdutoPage implements OnInit {
   }
 
   public comprarProduto(produto: ProdutoDetalhe) {
-    this.router.navigate(['/carrinho', { produto }]);
+    this.router.navigateByUrl('/carrinho', { state: produto})
     console.log("Comprar Produto: ", produto)
   }
 }

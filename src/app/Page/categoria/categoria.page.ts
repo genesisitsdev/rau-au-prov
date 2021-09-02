@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Pet } from '../../core/Pet'
 
 
 //MOCKUP
 import { PetListMosckService } from 'src/app/Services/mock/pet.list.mock.service';
 
-export interface Pets {
-  id: number;
-  name: string;
-}
 
 @Component({
   selector: 'app-categoria',
@@ -16,24 +13,24 @@ export interface Pets {
   styleUrls: ['./categoria.page.scss']
 })
 export class CategoriaPage implements OnInit {
+  public title: string
+  public categoria: any;
+  public petsList: Pet[] = [];
 
-  public categoriasList: string[] = ['cat1 1', 'Rações'];
-
-  public categoria: string;
-
-  public petsList: Pets[] = [ ];
-
-  constructor(private route: ActivatedRoute) {
-    let pet = new PetListMosckService
-    this.petsList = pet.get()
+  constructor(private router: Router, private route: ActivatedRoute) {
+    this.petsList = PetListMosckService.get().map((pet: any)=> {
+      return new Pet(pet)
+    })
   }
 
-  ngOnInit() {
+  ngOnInit() {this.categoria = this.router.getCurrentNavigation().extras.state
+    this.title = this.categoria.nome
 
-    const id = +this.route.snapshot.paramMap.get('idCategoria');
+    console.log('Categoria: ', this.categoria);
+  }
 
-    this.categoria = this.categoriasList[id];
-
-    console.log('categoria: ', this.categoria);
+  public changeSubcategoria(pet: Pet) {
+    this.router.navigateByUrl('/subcategoria', { state: pet})
+    console.log("change subcategoria: ", pet)
   }
 }

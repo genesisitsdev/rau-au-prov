@@ -1,27 +1,26 @@
-export class PetListMosckService {
-
+export class RacaoListMockService {
   static get() {
     return [
       {
         id: 1,
-        nome: 'Cachorros'
+        nome: 'Ração Seca'
       },
       {
         id: 2,
-        nome: 'Gatos'
+        nome: 'Ração Úmida'
       },
       {
         id: 3,
-        nome: 'Pássaros'
+        nome: 'Ração Prescrita'
       },
       {
         id: 4,
-        nome: 'Peixes'
+        nome: 'Ração Natural'
       },
       {
         id: 5,
-        nome: 'Outros Pets'
+        nome: 'Ver Todos'
       },
-    ];
+    ]
   }
 }

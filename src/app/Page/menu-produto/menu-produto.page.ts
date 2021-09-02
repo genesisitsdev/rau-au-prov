@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FactoryProduto } from 'src/app/Components/produto/Fatory.Produto';
+import { FactoryProduto as Produto } from 'src/app/Components/produto/Fatory.Produto';
+
+import { PromoMockService } from 'src/app/Services/mock/promo.mock.service';
 
 
 @Component({
@@ -9,13 +11,10 @@ import { FactoryProduto } from 'src/app/Components/produto/Fatory.Produto';
   styleUrls: ['./menu-produto.page.scss'],
 })
 export class MenuProdutoPage implements OnInit {
+  public title: string
   public categoria: any
-  public produtos: FactoryProduto[] = []
-
-  public baners: any[] = [
-    { id: 'asdas', url: '../../../assets/img/rauau/promo/baner-cao.PNG' },
-    { id: '123', url: '../../../assets/img/rauau/promo/baner-cao.PNG' },
-  ];
+  public produtos: Produto[] = []
+  public baners: any[] = []
 
   public slideOpts: any = {
     initialSlide: 1,
@@ -23,29 +22,29 @@ export class MenuProdutoPage implements OnInit {
   };
 
   constructor(private route: ActivatedRoute, private router: Router) {
-    let prod = new FactoryProduto
+
+    this.baners = PromoMockService.get()
+    let prod = new Produto
     prod.mock()
 
     this.produtos.push(prod)
     this.produtos.push(prod)
     this.produtos.push(prod)
     this.produtos.push(prod)
-
-    console.log("menu-produto", this.produtos)
   }
 
   ngOnInit() {
-    this.categoria = this.route.snapshot.paramMap.get('idSubCategoria');
-    console.log('Menu Produto/subcategoria: ', this.categoria);
+    this.categoria = this.router.getCurrentNavigation().extras.state
+    this.title = this.categoria.nome
   }
 
-  public changeProduto(produto: any) {
-    this.router.navigate(['/produto', { produto }]);
+  public changeProduto(produto: Produto) {
+    this.router.navigateByUrl('/produto', { state: produto})
     console.log("Change Produto: ", produto)
   }
 
   public changeBaner(baner: any) {
-    this.router.navigate(['/home', { baner }]);
+    this.router.navigateByUrl('/home', { state: baner})
     console.log("change Baner: ", baner)
   }
 }

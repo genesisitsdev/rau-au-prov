@@ -1,13 +1,9 @@
 export class CategoriasMockService {
-
-  public categorias: any[] = [
-    { name: "cachorros", url: "../../../assets/img/rauau/icons/rau-au-cachoro.svg"},
-    { name: "gatos", url: "../../../assets/img/rauau/icons/rau-au-gato.svg"},
-    { name: "pássaros", url: "../../../assets/img/rauau/icons/rau-au-passaro.svg"},
-    { name: "pássaros", url: "../../../assets/img/rauau/icons/rau-au-passaro.svg"}
-  ]
-
-  public get() {
-    return this.categorias
+  static get() {
+    return [
+      { id: 1, nome: "cachorros", url: "../../../assets/img/rauau/icons/rau-au-cachoro.svg"},
+      { id: 2, nome: "gatos", url: "../../../assets/img/rauau/icons/rau-au-gato.svg"},
+      { id: 3, nome: "pássaros", url: "../../../assets/img/rauau/icons/rau-au-passaro.svg"},
+    ]
   }
 }

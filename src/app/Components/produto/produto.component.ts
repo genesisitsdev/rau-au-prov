@@ -13,7 +13,7 @@ export class ProdutoComponent implements OnInit {
     if(prod) {
       this.produtoComponent = prod
     }
-    console.log("Produto Compoents: ", prod)
+    //console.log("Produto Compoents: ", prod)
   }
 
   @Output() changeProduto = new EventEmitter<Produto>();

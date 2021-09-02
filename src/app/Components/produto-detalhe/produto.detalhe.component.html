@@ -1,7 +1,7 @@
 <ion-item-group class="produtoDetalhe">
 
   <ion-slides class="produtoDetalheCarrossel" pager="true" [options]="slideOpts"
-    *ngIf="(produtoComponent?.carrosselDelUrls.length > 0)">
+    *ngIf="(produtoComponent?.carrosselDelUrls?.length > 0)">
     <ion-slide *ngFor="let photo of produtoComponent?.carrosselDelUrls">
       <figure>
         <img [src]="photo">

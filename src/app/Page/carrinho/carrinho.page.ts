@@ -8,7 +8,8 @@ import { CarrinhoDeCompra } from 'src/app/core/CarrainhoDeCompra';
   styleUrls: ['./carrinho.page.scss'],
 })
 export class CarrinhoPage implements OnInit {
-  public produto: ProdutoDetalhe;
+  public title: string = "Carrinho"
+  public produto: any;
   public carrinho: CarrinhoDeCompra
   public categoria: string = "carrinho"
 
@@ -19,14 +20,13 @@ export class CarrinhoPage implements OnInit {
 
     this.produto = new ProdutoDetalhe();
     this.produto.mockDetahle()
-    this.carrinho.addProduto(this.produto)
-    this.carrinho.totalizacao()
+
   }
 
   ngOnInit() {
-    //this.categoria = this.route.snapshot.paramMap.get('idSubCategoria');
-    this.categoria = "carrinho"
-    console.log('Carrinho: ', this.categoria);
+    //this.produto = this.router.getCurrentNavigation().extras.state
+    this.carrinho.addProduto(this.produto)
+    this.carrinho.totalizacao()
   }
 
   changeProduto(produto: ProdutoDetalhe) {

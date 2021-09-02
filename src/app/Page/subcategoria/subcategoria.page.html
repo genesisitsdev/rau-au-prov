@@ -1,8 +1,8 @@
-<app-nav-bar [title]="subcategoria"></app-nav-bar>
+<app-nav-bar [title]="title"></app-nav-bar>
 <ion-content>
   <ion-list>
-    <ion-item [routerLink]="['/menu-produto', { idSubCategoria: tipoRacao.id }]" *ngFor="let tipoRacao of tiposRacao">
-      <ion-label>{{tipoRacao.name}}</ion-label>
+    <ion-item *ngFor="let tipoRacao of tiposRacao" (click)="changeSubcategria(tipoRacao)" >
+      <ion-label>{{tipoRacao.nome}}</ion-label>
       <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
     </ion-item>
   </ion-list>
