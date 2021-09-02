@@ -136,15 +136,14 @@ ion-content {
   }
 
   .slidesMarcas {
-    width: 40px;
+    max-width: 40%;
     height: 112px;
     margin-top: 30px;
     margin-bottom: 30px;
 
-  }
-
-  .imgMarcas {
-    width: 112px;
+    > * {
+      min-width: 80%;
+    }
   }
 
   // .imgUltimosPedidos {

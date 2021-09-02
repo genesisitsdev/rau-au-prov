@@ -29,15 +29,17 @@ export class FactoryProduto extends Produto implements IFactoryProduto{
   }
 
   public mock() {
-    this.pid = "1"
+    this.id = "1"
     this.nome = "Ração Golden Special Sabor Frango e Carne"
     this.marca = 'Premier Pet'
+    this.tipo = 'Golden'
     this.preco = 132.99
     this.desconto = 18
-    this.imagemUrl = '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png'
-    this.tipo = 'Golden'
-    this.categoriaCorrente = 'Golden'
+    this.img = '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png'
+    this.categoria = 'Golden'
     this.favorito = false
+    this.categorias = [ "cao", "gato"]
+    this.descricao = "Cão e Gato"
 
   }
 

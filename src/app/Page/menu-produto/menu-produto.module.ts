@@ -7,23 +7,24 @@ import { IonicModule } from '@ionic/angular';
 import { MenuProdutoPageRoutingModule } from './menu-produto-routing.module';
 
 import { MenuProdutoPage } from './menu-produto.page';
-import { ProdutoComponent } from "../../Components/produto/produto.component"
-import { BanerComponent } from "../../Components/banner/banner.component"
-
+import { NavBarComponentModule } from 'src/app/core/component/nav-bar/nav-bar.component.module';
+import { ProdutoModule } from 'src/app/Components/produto/produto.module';
+import { BanerModule } from 'src/app/Components/banner/baner.module'
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MenuProdutoPageRoutingModule
+    MenuProdutoPageRoutingModule,
+    NavBarComponentModule,
+    ProdutoModule,
+    BanerModule
   ],
   declarations: [
     MenuProdutoPage,
-    ProdutoComponent,
-    BanerComponent],
+  ],
   exports: [
-    ProdutoComponent,
-    BanerComponent
+    MenuProdutoPage
   ]
 })
 export class MenuProdutoPageModule {}

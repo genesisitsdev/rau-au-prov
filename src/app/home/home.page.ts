@@ -4,11 +4,25 @@ import { AuthService } from '../Services/Auth/auth.service';
 import { FranquiaService } from './../Services/Franquias/franquia.service';
 import { Router } from '@angular/router';
 
+//############### MOCKUPS ###############################################################################
+import { CategoriasMockService } from '../Services/mock/categorias.mock.service';
+import { SegmentosMockService } from '../Services/mock/segmentos.mock.service';
+import { PromoMockService } from '../Services/mock/promo.mock.service';
+import { PromoCardMockService } from '../Services/mock/promocard.mock.service';
+import { CardDescontoMockService } from '../Services/mock/card.desconto.mock.service';
+import { MarcasMockService } from '../Services/mock/marcas.mock.service';
+import { ProdutoMockService } from '../Services/mock/produto.mock.service';
+//########################################################################################################
+
+import { FactoryProduto as Produto } from '../Components/produto/Fatory.Produto';
+
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
 export class HomePage implements OnInit {
   public optionsFranquias: any;
   public tollbarEndereco: any;
@@ -21,129 +35,44 @@ export class HomePage implements OnInit {
   public ultimoPedidoOpts: any;
   public marcasOpts: any;
 
-  public seguimentos = [
-    { id: 1, nome: 'Rações', img: 'assets/img/rauau/icones_slides/tigela.png' },
-    {
-      id: 2,
-      nome: 'Petiscos',
-      img: 'assets/img/rauau/icones_slides/petisco.png',
-    },
-    {
-      id: 3,
-      nome: 'Ossos',
-      img: '../../assets/img/rauau/icones_slides/osso.png',
-    },
-    {
-      id: 4,
-      nome: 'Brinquedos',
-      img: '../../assets/img/rauau/icones_slides/Briquedos.png',
-    },
-  ];
-
-  public promo: any = [
-    { id: 1, img: '../../assets/img/rauau/promo/banner.png' },
-    // {id:2, img:'assets/img/promo/Banner.png'},
-    // {id:3, img:'assets/img/promo/banner-dose-dupla.jpg'},
-    // {id:4, img:'assets/img/promo/Banner_site_pasta.png'},
-    // {id:5, img:'assets/img/promo/INVERNO_SITE_pasta.png'},
-    // {id:6, img:'assets/img/promo/INVERNO_SITE_burger.png'},
-    // {id:7, img:'assets/img/promo/INVERNO_SITE_grill.png'},
-    // {id:8, img:'assets/img/promo/INVERNO_SITE_NAJAH.png'},
-    // {id:9, img:'assets/img/promo/INVERNO_SITE_pizza.png'}
-  ];
-
-  public promoCard: any = [
-    { id: 1, img: 'assets/img/promo/84rolls.jpg' },
-    { id: 2, img: 'assets/img/promo/COMBO2.png' },
-    { id: 3, img: 'assets/img/promo/NOVOS_30.jpg' },
-  ];
-
-  public CardDesconto: any = [
-    {
-      id: 1,
-      nome: 'Organnact',
-      marca: 'Promum Dog',
-      preco: 'R$ 64,90',
-      desconto: 'R$ 18,00',
-      img: '../../assets/img/rauau/Produtos/Organnact_Promun_Dog.png',
-    },
-    {
-      id: 1,
-      nome: 'Antipulgas e Carrapatos  MSD para Cães de 20Kg a 40Kg',
-      marca: 'Promum Dog',
-      preco: 'R$ 237,92',
-      desconto: 'R$ 15,00',
-      img: '../../assets/img/rauau/Produtos/bravecto.jpg',
-    },
-  ];
-
-  public marcas = [
-    {
-      id: 1,
-      marca: 'pedigre',
-      img: '../../assets/img/rauau/marcas/pedigre.png',
-    },
-    {
-      id: 1,
-      marca: 'whiskas',
-      img: '../../assets/img/rauau/marcas/whiskas.png',
-    },
-    { id: 1, marca: 'golden', img: '../../assets/img/rauau/marcas/golden.png' },
-  ];
-
-  public fixo: any = [
-    {
-      id: 1,
-      nome: 'Ração Golden Special Sabor Frango e Carne ',
-      marca: 'Premier Pet',
-      tipo: 'Golden',
-      preco: 'R$ 132,99',
-      desconto: 'R$ 18,00',
-      img: '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-      categoria: 'Golden',
-    },
-    {
-      id: 1,
-      nome: 'Ração Golden Special Sabor Frango e Carne ',
-      marca: 'Premier Pet',
-      tipo: 'Golden',
-      preco: 'R$ 132,99',
-      desconto: 'R$ 18,00',
-      img: '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-    },
-    {
-      id: 1,
-      nome: 'Ração Golden Special Sabor Frango e Carne ',
-      marca: 'Premier Pet',
-      tipo: 'Golden',
-      preco: 'R$ 132,99',
-      desconto: 'R$ 18,00',
-      img: '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-    },
-    {
-      id: 1,
-      nome: 'Ração Golden Special Sabor Frango e Carne ',
-      marca: 'Premier Pet',
-      tipo: 'Golden',
-      preco: 'R$ 132,99',
-      desconto: 'R$ 18,00',
-      img: '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png',
-    },
-  ];
-
-  public categorias: any[] = [
-    { name: "cachorros", url: "../../../assets/img/rauau/icons/rau-au-cachoro.svg"},
-    { name: "gatos", url: "../../../assets/img/rauau/icons/rau-au-gato.svg"},
-    { name: "pássaros", url: "../../../assets/img/rauau/icons/rau-au-passaro.svg"},
-    { name: "pássaros", url: "../../../assets/img/rauau/icons/rau-au-passaro.svg"}
-  ]
+  public seguimentos: any[] = []
+  public categorias: any[] = []
+  public promo: any[] = []
+  public promoCard: any[] = []
+  public CardDesconto: any[] = []
+  public marcas: any[] =[]
+  public produtos: any[] = []
 
   constructor(
     private geoLocation: GeolocalizacaoService,
     private auth: AuthService,
     private franquiaService: FranquiaService,
     private router: Router
-  ) {}
+  ) {
+
+    let cat = new CategoriasMockService
+    this.categorias = cat.get()
+
+    let seg = new SegmentosMockService
+    this.seguimentos = seg.get()
+
+    let prom = new PromoMockService
+    this.promo = prom.get()
+
+    let promocard = new PromoCardMockService
+    this.promoCard = promocard.get()
+
+    let card = new CardDescontoMockService
+    this.CardDesconto = card.get()
+    let marc = new MarcasMockService
+    this.marcas = marc.get()
+
+    let prod = new ProdutoMockService
+
+    prod.get().forEach((produto: any)=> {
+      this.produtos.push( new Produto(produto))
+    })
+  }
 
   ngOnInit() {
     this.enderecoPrincipal();
@@ -241,10 +170,17 @@ export class HomePage implements OnInit {
   }
 
   changeCategoria(categoria: any) {
+    this.router.navigate(['/categoria', { categoria }]);
     console.log("change categoria", categoria)
   }
 
   changeMenu(menu: any) {
+    //this.router.navigate(['/menu', { menu }]);
     console.log("Change Menu: ", menu)
+  }
+
+  changeProduto(produto: Produto) {
+    this.router.navigate(['/produto', { produto }]);
+    console.log("Change Produto: ", produto)
   }
 }

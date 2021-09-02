@@ -1,9 +1,4 @@
-<ion-header>
-  <ion-toolbar color="dark">
-    <ion-title>Produto</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-nav-bar [title]="categoria"></app-nav-bar>
 <ion-content class="produtoPage">
 
   <ion-item-group class="produtoPageSection">
@@ -25,7 +20,9 @@
 
     <ion-slides pager="true">
       <ion-slide class="produtoPageSlider" *ngFor="let produto of produtos">
+
         <produto-component [produto]="produto" (changeProduto)="changeProdutoComprado($event)"></produto-component>
+
       </ion-slide>
     </ion-slides>
   </ion-item-group>

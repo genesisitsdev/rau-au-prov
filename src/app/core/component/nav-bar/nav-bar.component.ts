@@ -7,10 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class NavBarComponent implements OnInit {
-  @Input()
-  public title: string;
+  @Input() title: string;
 
   ngOnInit(): void {
-    console.log('chegou: ', this.title);
+    console.log('Nav Bar title: ', this.title);
   }
 }

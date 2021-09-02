@@ -1,8 +1,9 @@
-<ion-item slot="none" class="produtoComponent ion-no-padding" *ngIf="produtoComponent?.pid" >
+
+  <ion-item slot="none" class="produtoComponent ion-no-padding" *ngIf="produtoComponent?.id" >
 
   <ion-button fill="clear" slot="start" class="produtoDesconto" (click)="selecionarProduto(produtoComponent)">
     <ion-icon slot="start" name="caret-down-sharp"></ion-icon>
-    <span>{{ produtoComponent?.desconto | slice:0:-3 }}</span>
+    <span>{{produtoComponent?.desconto}}</span>
   </ion-button>
 
   <ion-button fill="clear" slot="end" class="produtoFavorito" (click)="favoritarProduto(produtoComponent)">
@@ -14,7 +15,7 @@
     <ion-label>
 
       <figure class="produtoImagemUrl">
-        <img [src]="produtoComponent?.imagemUrl" />
+        <img [src]="produtoComponent?.img" />
       </figure>
 
       <article class="produtoDetalhe">
@@ -23,12 +24,12 @@
 
         <p class="produtoMarca">
           <span>{{ produtoComponent?.marca}}</span>
-          <span *ngIf="produtoComponent?.categoriaCorrente"> | {{produtoComponent?.categoriaCorrente}}</span>
+          <span *ngIf="produtoComponent?.categoria"> | {{produtoComponent?.categoria}}</span>
         </p>
 
         <p class="produtoPreco">
           <span class="produtoSaudacao">Aproveite esse desconto</span>
-          <span>{{produtoComponent?.preco}}</span>
+          <span>R$ {{produtoComponent?.preco}}</span>
         </p>
 
       </article>
@@ -36,3 +37,4 @@
     </ion-label>
   </ion-button>
 </ion-item>
+

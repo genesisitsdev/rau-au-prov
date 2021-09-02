@@ -6,16 +6,17 @@ import { IonicModule } from '@ionic/angular';
 import { CategoriaPageRoutingModule } from './categoria-routing.module';
 
 import { CategoriaPage } from './categoria.page';
-import { NavBarComponent } from '../../core/component/nav-bar/nav-bar.component';
+import { NavBarComponentModule } from 'src/app/core/component/nav-bar/nav-bar.component.module';
 
 @NgModule({
   imports: [
     CommonModule,
     IonicModule,
     CategoriaPageRoutingModule,
+    NavBarComponentModule
   ],
-  declarations: [CategoriaPage, NavBarComponent],
-  exports: [NavBarComponent]
+  declarations: [CategoriaPage,],
+  exports: [CategoriaPage]
 })
 
 export class CategoriaPageModule {}

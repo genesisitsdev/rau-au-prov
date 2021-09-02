@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FactoryProduto } from 'src/app/Components/produto/Fatory.Produto';
+
 
 @Component({
   selector: 'app-menu-produto',
@@ -7,6 +9,7 @@ import { FactoryProduto } from 'src/app/Components/produto/Fatory.Produto';
   styleUrls: ['./menu-produto.page.scss'],
 })
 export class MenuProdutoPage implements OnInit {
+  public categoria: any
   public produtos: FactoryProduto[] = []
 
   public baners: any[] = [
@@ -19,7 +22,7 @@ export class MenuProdutoPage implements OnInit {
     speed: 400,
   };
 
-  constructor() {
+  constructor(private route: ActivatedRoute, private router: Router) {
     let prod = new FactoryProduto
     prod.mock()
 
@@ -27,15 +30,22 @@ export class MenuProdutoPage implements OnInit {
     this.produtos.push(prod)
     this.produtos.push(prod)
     this.produtos.push(prod)
+
+    console.log("menu-produto", this.produtos)
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.categoria = this.route.snapshot.paramMap.get('idSubCategoria');
+    console.log('Menu Produto/subcategoria: ', this.categoria);
+  }
 
   public changeProduto(produto: any) {
+    this.router.navigate(['/produto', { produto }]);
     console.log("Change Produto: ", produto)
   }
 
   public changeBaner(baner: any) {
+    this.router.navigate(['/home', { baner }]);
     console.log("change Baner: ", baner)
   }
 }

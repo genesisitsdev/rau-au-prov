@@ -115,9 +115,9 @@
   <p class="produtosDescontoTitle ion-text-left">Produtos com Desconto <span class="verTodos">Ver todos</span></p>
 
   <ion-slides [options]="ultimoPedidoOpts">
-    <ion-slide class="acertoFlex" *ngFor="let ultimos of CardDesconto" size="12">
+    <ion-slide class="acertoFlex" *ngFor="let produto of produtos" size="12">
 
-      <produto-component [produto]="ultimos" class="produtoCard"></produto-component>
+      <produto-component [produto]="produto" class="produtoCard" (changeProduto)="changeProduto($event)"></produto-component>
 
     </ion-slide>
   </ion-slides>
@@ -134,9 +134,9 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col class="descontoFixo" offset="0.2" size="5.6" *ngFor="let item of fixo">
+      <ion-col class="descontoFixo" offset="0.2" size="5.6" *ngFor="let produto of produtos">
 
-        <produto-component [produto]="item" class="produtoLista"></produto-component>
+        <produto-component [produto]="produto" class="produtoLista" (changeProduto)="changeProduto($event)"></produto-component>
 
       </ion-col>
     </ion-row>

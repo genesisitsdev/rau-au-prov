@@ -8,6 +8,7 @@ import { SubCategoriaPageRoutingModule } from './subcategoria-routing.module';
 import { SubCategoriaPage } from './subcategoria.page';
 import { NavBarComponentModule } from 'src/app/core/component/nav-bar/nav-bar.component.module';
 
+
 @NgModule({
   imports: [
     CommonModule,

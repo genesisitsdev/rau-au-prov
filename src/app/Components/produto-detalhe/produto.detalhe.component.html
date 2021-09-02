@@ -22,7 +22,7 @@
   </ion-item>
 
   <ion-item class="produtoDetalheAvaliacoes">
-    <star-rating-component></star-rating-component>
+    <star-rating-component [level]="produtoComponent?.nivelDeSatiafacao"></star-rating-component>
     <ion-label>
       {{produtoComponent?.numeroDeAvaliacoes}} avaliações
     </ion-label>
@@ -32,7 +32,7 @@
     <ion-icon src="../../../assets/icon/rau-au/medal-dog.svg"></ion-icon>
     <ion-label>
       {{produtoComponent?.posicaoNoRanking}} no ranking na categoria
-      <span><b style="color: #3aacd1 ">{{produtoComponent?.categoriaCorrente}}</b></span>
+      <span><b style="color: #3aacd1 ">{{produtoComponent?.categoria}}</b></span>
     </ion-label>
   </ion-item>
 

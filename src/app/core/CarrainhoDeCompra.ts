@@ -21,13 +21,11 @@ export class CarrinhoDeCompra {
 
   public removerProduto(produto: ProdutoDetalhe) {
     this.produtos = this.produtos.filter((prod: ProdutoDetalhe)=> {
-      return (prod.pid != produto.pid)
+      return (prod.id != produto.id)
     })
   }
 
-
   public totalizacao() {
-
 
     this.produtos.forEach((produto: ProdutoDetalhe)=> {
       this.subtotal =+ produto.subTotal

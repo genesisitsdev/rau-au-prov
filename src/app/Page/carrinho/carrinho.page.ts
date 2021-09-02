@@ -1,6 +1,6 @@
-import { ThrowStmt } from '@angular/compiler';
+
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ProdutoDetalhe } from 'src/app/Components/produto-detalhe/ProdutoDetalhe';
 import { CarrinhoDeCompra } from 'src/app/core/CarrainhoDeCompra';
 @Component({
@@ -10,9 +10,10 @@ import { CarrinhoDeCompra } from 'src/app/core/CarrainhoDeCompra';
 export class CarrinhoPage implements OnInit {
   public produto: ProdutoDetalhe;
   public carrinho: CarrinhoDeCompra
+  public categoria: string
 
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute) {
 
     this.carrinho = new CarrinhoDeCompra
 

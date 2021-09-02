@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { ProdutoComponent } from '../Components/produto/produto.component'
+import { ProdutoModule } from '../Components/produto/produto.module';
 import { MenuComponent } from '../Components/menu/menu.component'
 import { MenuCategoriasComponent } from '../Components/menu-categorias/menu.categorias.component';
 @NgModule({
@@ -14,15 +14,14 @@ import { MenuCategoriasComponent } from '../Components/menu-categorias/menu.cate
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
+    ProdutoModule
   ],
   declarations: [
     HomePage,
-    ProdutoComponent,
     MenuComponent,
     MenuCategoriasComponent
   ],
   exports: [
-    ProdutoComponent,
     MenuComponent,
     MenuCategoriasComponent
   ]

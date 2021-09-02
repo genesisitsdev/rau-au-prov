@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutoDetalhe } from 'src/app/Components/produto-detalhe/ProdutoDetalhe';
-import { FactoryProduto } from 'src/app/Components/produto/Fatory.Produto';
-import { Produto } from 'src/app/Components/produto/Produto';
+import { FactoryProduto as Produto } from 'src/app/Components/produto/Fatory.Produto';
+import { Router, ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-produto',
   templateUrl: './produto.page.html',
@@ -10,33 +11,42 @@ import { Produto } from 'src/app/Components/produto/Produto';
 export class ProdutoPage implements OnInit {
 
   produtoComponent: any;
+  categoria: string
 
   public produto: ProdutoDetalhe
 
-  public produtos: FactoryProduto[] = []
+  public produtos: Produto[] = []
 
-  constructor() {
+  constructor(private router: Router, private route: ActivatedRoute) {
+
     this.produto = new ProdutoDetalhe
     this.produto.mockDetahle()
 
-    let prod = new FactoryProduto
+    let prod = new Produto
     prod.mock()
     this.produtos.push(prod)
     this.produtos.push(prod)
     this.produtos.push(prod)
+    console.log("PROD: ------------- ", prod)
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.categoria = this.route.snapshot.paramMap.get('idSubCategoria');
+    console.log('Menu Produto/subcategoria: ', this.categoria);
+  }
 
   public changeProdutoDetalhe(produto: ProdutoDetalhe) {
     this.produtoComponent = produto
+    //this.router.navigate(['/home', { produto }]);
   }
 
   public changeProdutoComprado(produto: Produto) {
+    //this.router.navigate(['/home', { produto }]);
     console.log("Produto Conprado: ", produto)
   }
 
   public comprarProduto(produto: ProdutoDetalhe) {
+    this.router.navigate(['/carrinho', { produto }]);
     console.log("Comprar Produto: ", produto)
   }
 }
