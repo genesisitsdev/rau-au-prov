@@ -16,6 +16,8 @@ import { TokenInterceptorService } from './Services/Token-Interceptor/token-inte
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SQLite } from '@ionic-native/sqlite/ngx';
+import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,7 +40,9 @@ import { AppRoutingModule } from './app-routing.module';
               { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
               { provide: HTTP_INTERCEPTORS , useClass: TokenInterceptorService, multi: true},
               AuthService,
-              TokenInterceptorService
+              TokenInterceptorService,
+              SQLite,
+              SQLitePorter
             ],
   bootstrap: [AppComponent],
 })

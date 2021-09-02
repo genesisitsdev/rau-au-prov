@@ -24,6 +24,8 @@
     "@ionic-native/geolocation": "^5.34.0",
     "@ionic-native/google-maps": "^5.27.0-beta-20200630",
     "@ionic-native/native-geocoder": "^5.35.0",
+    "@ionic-native/sqlite": "^5.36.0",
+    "@ionic-native/sqlite-porter": "^5.36.0",
     "@ionic/angular": "^5.5.2",
     "@ungap/global-this": "^0.4.4",
     "br-mask": "0.0.10",
@@ -62,6 +64,7 @@
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-sqlite-storage": "^6.0.0",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
@@ -76,7 +79,8 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
-    "typescript": "~4.2.4"
+    "typescript": "~4.2.4",
+    "uk.co.workingedge.cordova.plugin.sqliteporter": "^1.1.1"
   },
   "description": "An Ionic project",
   "cordova": {
@@ -89,8 +93,12 @@
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-geolocation": {},
-      "cordova-plugin-nativegeocoder": {}
+      "cordova-plugin-geolocation": {
+        "GPS_REQUIRED": "true"
+      },
+      "cordova-plugin-nativegeocoder": {},
+      "cordova-sqlite-storage": {},
+      "uk.co.workingedge.cordova.plugin.sqliteporter": {}
     },
     "platforms": [
       "android",
