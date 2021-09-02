@@ -32,7 +32,7 @@ export class CarrinhoDeCompra {
       this.valorDoFrete = produto.valorDoFrete
     })
 
-    this.total = (this.subtotal + this.valorDoFrete)
+    this.total = Number((this.subtotal + this.valorDoFrete).toFixed(2))
 
     this.parcela = Number((this.total / this.parcelas).toFixed(2))
 

@@ -1,0 +1,50 @@
+.meioDePagamento {
+  .boxComprar {
+    margin: 32px 0 0 0;
+
+    > * {
+      width: 100%;
+      --background: #ff0000;
+    }
+  }
+
+  .boxEndereco {
+    margin-top: 8px;
+    margin-bottom: 0;
+    margin-left: 15px;
+    padding: 0;
+    margin-right: 14px;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 12px;
+
+    p:first-child {
+      color: #5b5050;
+      font-size: 14px;
+    }
+
+    p {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .descEndereco {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Open Sans Light";
+    color: #848484 !important;
+    text-transform: uppercase;
+  }
+
+  .frete {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 400;
+    color: #848484;
+  }
+
+  .prazoFrete {
+    margin-right: 198px !important;
+  }
+}

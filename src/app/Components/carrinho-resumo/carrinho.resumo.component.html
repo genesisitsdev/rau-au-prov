@@ -1,0 +1,39 @@
+<ion-list class="carrinhoResumo">
+
+  <ion-item class="title">
+    <ion-label>Resumo dos valores</ion-label>
+  </ion-item>
+
+  <ion-item class="subTotal">
+    <span>Subtotal</span> <strong>R$ {{carrinho?.subtotal}}</strong>
+  </ion-item>
+
+  <ion-item class="frete">
+    <span>Taxa de entregas</span> <strong>R$ {{carrinho?.valorDoFrete}}</strong>
+  </ion-item>
+
+  <ion-item class="desconto">
+    <span>Cupom</span> <strong>R$ {{carrinho?.desconto}}</strong>
+  </ion-item>
+
+  <ion-item class="total">
+    <span>Total</span> <strong>R$ {{carrinho?.total}}</strong>
+  </ion-item>
+
+</ion-list>
+
+<ion-list>
+
+  <ion-item class="pagamento">
+    <ion-label>Pagamento</ion-label>
+  </ion-item>
+
+  <ion-item class="selectPagamento">
+    <ion-icon src="../../../assets/img/rauau/icons/rau-au-card.svg"></ion-icon>
+    <ion-select placeholder="Selecione a forma como quer pagar">
+      <ion-select-option value="">Cartão de Débito</ion-select-option>
+      <ion-select-option value=""> Cartão de Crédito</ion-select-option>
+      <ion-select-option value="">Dinheiro</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>

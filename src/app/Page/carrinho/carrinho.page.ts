@@ -10,7 +10,7 @@ import { CarrinhoDeCompra } from 'src/app/core/CarrainhoDeCompra';
 export class CarrinhoPage implements OnInit {
   public produto: ProdutoDetalhe;
   public carrinho: CarrinhoDeCompra
-  public categoria: string
+  public categoria: string = "carrinho"
 
 
   constructor(private router: Router, private route: ActivatedRoute) {
@@ -23,7 +23,11 @@ export class CarrinhoPage implements OnInit {
     this.carrinho.totalizacao()
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    //this.categoria = this.route.snapshot.paramMap.get('idSubCategoria');
+    this.categoria = "carrinho"
+    console.log('Carrinho: ', this.categoria);
+  }
 
   changeProduto(produto: ProdutoDetalhe) {
     this.carrinho.totalizacao()
@@ -31,6 +35,7 @@ export class CarrinhoPage implements OnInit {
   }
 
   public checkout(carrinho: CarrinhoDeCompra) {
+    this.router.navigate(['/meio-pagamento', { carrinho }]);
     console.log("Carrinho: ", carrinho)
   }
 }
