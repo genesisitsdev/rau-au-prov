@@ -58,16 +58,16 @@ export class CarrinhoPage implements OnInit {
     // });
   }
 
-  atualizaPreco(produto: Produto) {
-    this.precoTotal += (produto.preco * produto.quantidade);
+  atualizaPreco(produto: ProdutoDetalhe) {
+    //this.precoTotal += (produto.preco * produto.quantidade);
   }
 
   adicionar(produto: Produto): void {
     produto.quantidade += 1;
-    this.atualizaPreco(produto);
+    //this.atualizaPreco(produto);
   }
 
-  async remover(produto: Produto) {
+  async remover(produto: ProdutoDetalhe) {
     if (produto.quantidade === 1) {
       console.log('Quer remover', produto.quantidade);
       await this.confirmaExclusao(produto);
@@ -77,7 +77,7 @@ export class CarrinhoPage implements OnInit {
     this.atualizaPreco(produto);
   }
 
-  async confirmaExclusao(produto: Produto): Promise<any> {
+  async confirmaExclusao(produto: ProdutoDetalhe): Promise<any> {
     const alert = await this.alertCtrl.create({
       cssClass: 'my-custom-class',
       header: 'Confirm!',
@@ -101,8 +101,8 @@ export class CarrinhoPage implements OnInit {
     });
   }
 
-  excluirProdutoLista(produto: Produto): void {
-    this.produtos = [...this.produtos.filter(p => p.id !== produto.id)];
+  excluirProdutoLista(produto: ProdutoDetalhe): void {
+    this.produtos = [...this.produtos.filter(p => p.pid !== produto.pid)];
   }
 
 
