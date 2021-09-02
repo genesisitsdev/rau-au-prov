@@ -2,8 +2,8 @@ interface IProduto {
   pid: string;
   nome: string;
   marca: string;
-  preco: string;
-  desconto: string;
+  preco: number;
+  desconto: number;
   imagemUrl: string;
   categoriaCorrente: string
   tipo: string
@@ -13,8 +13,8 @@ export class Produto implements IProduto {
   pid: string;
   nome: string;
   marca: string;
-  preco: string;
-  desconto: string;
+  preco: number;
+  desconto: number;
   imagemUrl: string;
   categoriaCorrente: string
   tipo: string
@@ -23,8 +23,8 @@ export class Produto implements IProduto {
     id: '',
     nome: '',
     marca: '',
-    preco: '',
-    desconto: '',
+    preco: 0,
+    desconto: 0,
     img: '',
     categortia: '',
     tipo: ''

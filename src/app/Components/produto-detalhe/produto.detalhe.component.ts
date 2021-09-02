@@ -10,18 +10,24 @@ import { ProdutoDetalhe } from './ProdutoDetalhe';
 export class ProdutoDetalheComponent implements OnInit {
 
   @Input() set produto(prod: ProdutoDetalhe) {
-    this.produtoComponent = prod
-    this.changeProduto.emit(this.produtoComponent)
+    if(prod) {
+      this.produtoComponent = prod
+      this.changeProduto.emit(this.produtoComponent)
+    }
   }
+
 
   @Output() changeProduto = new EventEmitter<ProdutoDetalhe>()
 
   public produtoComponent: ProdutoDetalhe
+  public typeCard: string = "full" // full | resume
 
   public slideOpts = {
     initialSlide: 1,
     speed: 400
   };
+
+  public constructor() {}
 
   public ngOnInit() {}
 

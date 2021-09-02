@@ -6,9 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { CarrinhoPageRoutingModule } from './carrinho-routing.module';
 import { CarrinhoPage } from './carrinho.page';
 import { NavBarComponent } from '../../core/component/nav-bar/nav-bar.component';
-import { ProdutoDetalheComponent } from 'src/app/Components/produto-detalhe/produto.detalhe.component';
-import { StarRatingComponent } from 'src/app/Components/star-rating/star.rating.component';
-
+import { ProdutoResumoComponent } from 'src/app/Components/produto-resumo/produto.resumo.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -18,13 +16,11 @@ import { StarRatingComponent } from 'src/app/Components/star-rating/star.rating.
   declarations: [
     CarrinhoPage,
     NavBarComponent,
-    ProdutoDetalheComponent,
-    StarRatingComponent
+    ProdutoResumoComponent
   ],
   exports: [
     NavBarComponent,
-    ProdutoDetalheComponent,
-    StarRatingComponent
+    ProdutoResumoComponent
   ]
 })
 

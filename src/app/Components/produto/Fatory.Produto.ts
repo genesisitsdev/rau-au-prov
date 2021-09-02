@@ -32,8 +32,8 @@ export class FactoryProduto extends Produto implements IFactoryProduto{
     this.pid = "1"
     this.nome = "Ração Golden Special Sabor Frango e Carne"
     this.marca = 'Premier Pet'
-    this.preco = 'R$ 132,99'
-    this.desconto = 'R$ 18,00'
+    this.preco = 132.99
+    this.desconto = 18
     this.imagemUrl = '../../assets/img/rauau/Produtos/Ração Golden Special Sabor Frango e Carne.png'
     this.tipo = 'Golden'
     this.categoriaCorrente = 'Golden'

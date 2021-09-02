@@ -1,16 +1,54 @@
-ion-content {
+.carrinhoPage {
   font-family: 'Open Sans Bold';
+  * {
+    --border-style: none;
+    font-family: 'Open Sans Bold';
+  }
+
+  .total {
+    color: #5555d9;
+  }
+
+  * ion-label {
+    display: flex;
+    width: auto;
+    max-width: auto;
+    min-width: 90px;
+  }
+
+  .boxCupom {
+    width: 90%;
+    margin: 16px auto 8px auto;
+    border-radius: 7px;
+    padding: 0 0 16px 0;
+    box-shadow: 0px 1px 8px rgba(0,0,0,0.2);
+
+    ion-input {
+      border-bottom: solid 1px rgba(0,0,0,0.1);
+    }
+
+    ion-icon {
+      font-size: 24px;
+      margin-right: 8px;
+    }
+  }
+
+  .boxComprar {
+    margin-top: 16px;
+
+    > * {
+      width: 100%;
+      --background: #3aacd1;
+    }
+  }
 }
 
 ion-list{
-  font-family: 'Open Sans Bold';
   display: flex;
   flex-direction: column;
 
   ion-item {
-    padding-left: 15px;
-    padding-right: 15px;
-    border: none;    
+    border: none;
   }
 }
 
@@ -23,7 +61,7 @@ ion-list{
   font-size: 14px;
   font-weight: 400;
   font-family: 'Open Sans Bold';
-  color: #848484;  
+  color: #848484;
 }
 
 .left {
@@ -43,7 +81,7 @@ div.imagemProduto {
 }
 
 div.detalhesProduto {
-  
+
 }
 
 .boxEndereco {
@@ -57,12 +95,12 @@ div.detalhesProduto {
 
   p:first-child {
     color: #5b5050;
-    font-size: 14px;      
+    font-size: 14px;
   }
 
   p {
     padding: 0;
-    margin: 0; 
+    margin: 0;
   }
 }
 
@@ -71,7 +109,7 @@ div.detalhesProduto {
   font-size: 14px;
   font-weight: 400;
   font-family: 'Open Sans Light';
-  color: #848484 !important;    
+  color: #848484 !important;
   text-transform: uppercase;
 }
 
@@ -79,11 +117,11 @@ div.detalhesProduto {
   display: inline-block;
   font-size: 10px;
   font-weight: 400;
-  color: #848484;  
+  color: #848484;
 }
 
 .prazoFrete {
-  margin-right: 198px !important;  
+  margin-right: 198px !important;
 }
 
 .boxTotal {

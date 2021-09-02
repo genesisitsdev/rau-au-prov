@@ -1,0 +1,57 @@
+<ion-grid class="produtoDetalheGrid" part="placeholder" select-placeholder>
+
+  <ion-row>
+
+    <ion-col size="5" >
+      <ion-slides class="produtoDetalheCarrossel" pager="true" *ngIf="(produtoComponent?.carrosselDelUrls.length > 0)">
+        <ion-slide *ngFor="let photo of produtoComponent?.carrosselDelUrls">
+          <figure>
+            <img [src]="photo">
+          </figure>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+
+    <ion-col size="7">
+
+      <ion-item class="ion-no-padding boxNome">
+        <span class="produtoResumoNome">
+          {{produtoComponent?.nome}}
+          <span class="produtoResumoMarca">
+            {{produtoComponent?.marca}} | {{produtoComponent?.tipo}}
+          </span>
+        </span>
+      </ion-item>
+
+      <ion-item class="ion-no-padding boxQuantizador">
+
+        <ion-button fill="clear" (click)="removerProduto(produtoComponent)">
+          <ion-icon name="remove-circle"></ion-icon>
+        </ion-button>
+
+        <span class="produtoResumoQuantidade">{{produtoComponent?.quantidade}}</span>
+
+        <ion-button fill="clear" (click)="addProduto(produtoComponent)">
+          <ion-icon name="add-circle" color="primary"></ion-icon>
+        </ion-button>
+
+        <ion-button fill="clear" slot="end">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+
+      </ion-item>
+
+      <ion-item class="ion-no-padding boxTotal">
+        <span class="produtoResumoTotal">
+          R$ {{produtoComponent?.subTotal}}
+          <span class="produtoResumoParcelas">
+            {{carrinhoComponent?.parcelas}}x R$ {{carrinhoComponent?.parcela}} sem juros
+          </span>
+        </span>
+      </ion-item>
+
+    </ion-col>
+
+  </ion-row>
+
+</ion-grid>

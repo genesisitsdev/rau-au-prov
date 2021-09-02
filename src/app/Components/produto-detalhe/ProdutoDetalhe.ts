@@ -8,6 +8,7 @@ interface IProdutoDetalhe {
   tipoDeFrete: string
   valorDoFrete: number
   quantidade: number
+  subTotal: number
   toggleFavorito()
 }
 
@@ -20,6 +21,7 @@ export class ProdutoDetalhe extends FactoryProduto implements IProdutoDetalhe{
   tipoDeFrete: string = 'Grátis'
   valorDoFrete: number = 0
   quantidade: number = 1
+  subTotal: number = 0
 
   public constructor(produtoDetalheAbstrato = {
     categorias: [''],
@@ -31,7 +33,8 @@ export class ProdutoDetalhe extends FactoryProduto implements IProdutoDetalhe{
     avaliacoes: 0,
     tipoDeFrete: 'Grátis',
     valorDoFrete: 0,
-    quantidade: 1
+    quantidade: 1,
+    subTotal: 0
   }) {
     super(produtoDetalheAbstrato)
     this.carrosselDelUrls = produtoDetalheAbstrato.carrossel
@@ -41,6 +44,7 @@ export class ProdutoDetalhe extends FactoryProduto implements IProdutoDetalhe{
     this.tipoDeFrete = produtoDetalheAbstrato.tipoDeFrete
     this.valorDoFrete = produtoDetalheAbstrato.valorDoFrete
     this.quantidade = produtoDetalheAbstrato.quantidade
+    this.subTotal = produtoDetalheAbstrato.subTotal
   }
 
   public mockDetahle() {
@@ -59,8 +63,9 @@ export class ProdutoDetalhe extends FactoryProduto implements IProdutoDetalhe{
   this.nivelDeSatiafacao = 2
   this.numeroDeAvaliacoes = 3012
   this.tipoDeFrete = 'Grátis'
-  this.valorDoFrete = 0
+  this.valorDoFrete = 16.91
   this.quantidade = 1
+  this.subTotal = Number((this.preco * this.quantidade).toFixed(2))
 
   }
 

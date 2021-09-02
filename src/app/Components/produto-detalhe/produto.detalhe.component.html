@@ -9,6 +9,12 @@
     </ion-slide>
   </ion-slides>
 
+  <ion-item class="produtoDetalheNome">
+    <ion-label>
+      {{produtoComponent?.nome}}
+    </ion-label>
+  </ion-item>
+
   <ion-item class="produtoDetalheMarca">
     <ion-label>
       {{produtoComponent?.marca}} | {{produtoComponent?.tipo}}
@@ -42,7 +48,7 @@
       </ion-label>
     </ion-item>
 
-    <ion-item slot="start" class="ion-no-padding">
+    <ion-item slot="start" class="produtoDetalheButtons ion-no-padding">
 
       <ion-button fill="outline" class="produtoDetalhePrecoButton" (click)="favoritarProduto(produtoComponent)">
         <ion-icon slot="icon-only" name="heart-outline" *ngIf="!produtoComponent?.favorito"></ion-icon>
@@ -56,5 +62,4 @@
     </ion-item>
 
   </ion-item>
-
 </ion-item-group>
